@@ -9,6 +9,8 @@ var flipped = false
 var path := PoolVector2Array()
 var player = null
 
+export (NodePath) var nav_tree_path = null
+onready var nav_node = get_node(nav_tree_path)
 
 func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
@@ -17,7 +19,7 @@ func _ready():
 func _process(_delta):
 	
 	
-	path = self.get_parent().get_simple_path(self.position, player.position)
+	path = nav_node.get_simple_path(self.position, player.position)
 	
 	# Calculate the movement distance for this frame
 	var distance_to_walk = speed * _delta
