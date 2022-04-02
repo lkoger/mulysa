@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Death.png-d90e3611d0d09fc60804614f60225808.stex"
+path="res://.import/greenwall-middle.png-2748dd4c60183cac253d8426bc9a6a16.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Death.png"
-dest_files=[ "res://.import/Death.png-d90e3611d0d09fc60804614f60225808.stex" ]
+source_file="res://assets/walls/greenwall-middle.png"
+dest_files=[ "res://.import/greenwall-middle.png-2748dd4c60183cac253d8426bc9a6a16.stex" ]
 
 [params]
 
