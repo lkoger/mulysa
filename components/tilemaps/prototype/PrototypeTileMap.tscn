@@ -1,7 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://components/tilemaps/prototype/PrototypeTileMap.tres" type="TileSet" id=1]
+[ext_resource path="res://components/tilemaps/astar_path/AStarPath.gd" type="Script" id=2]
 
 [node name="TileMap" type="TileMap"]
 tile_set = ExtResource( 1 )
 format = 1
+script = ExtResource( 2 )

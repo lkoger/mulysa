@@ -10,19 +10,17 @@ var path := PoolVector2Array()
 var player = null
 
 export (NodePath) var nav_tree_path = null
-onready var nav_node = get_node(nav_tree_path)
+onready var nav_node : AStarPath = get_node(nav_tree_path)
 
 func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
 	pass
 
-func _process(_delta):
-	
-	
+func _process(delta):
 	path = nav_node.get_simple_path(self.position, player.position)
 	
 	# Calculate the movement distance for this frame
-	var distance_to_walk = speed * _delta
+	var distance_to_walk = speed * delta
 	
 	# Move the player along the path until he has run out of movement or the path ends.
 	while distance_to_walk > 0 and path.size() > 0:
@@ -37,11 +35,10 @@ func _process(_delta):
 		# Update the distance to walk
 		distance_to_walk -= distance_to_next_point
 
-	
-	#velocity = velocity.normalized() * speed
+func _move():
+	for p in nav_node.path:
+		pass
 
-# TODO(koger): Movement is snappy. Is this desirable? Do we want acceleration,
-# sliding, and other effects that make it feel more slugish?
 func _physics_process(_delta):
 	#velocity = move_and_slide(velocity)
 	pass

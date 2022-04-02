@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "TileMap",
+"class": "AStarPath",
+"language": "GDScript",
+"path": "res://components/tilemaps/astar_path/AStarPath.gd"
+}, {
 "base": "Area2D",
 "class": "Death",
 "language": "GDScript",
@@ -20,6 +25,7 @@ _global_script_classes=[ {
 "path": "res://components/player/Player.gd"
 } ]
 _global_script_class_icons={
+"AStarPath": "",
 "Death": "",
 "Player": ""
 }
@@ -28,7 +34,7 @@ _global_script_class_icons={
 
 config/name="Escaping Death"
 run/main_scene="res://ui/title_screen/TitleScreen.tscn"
-config/icon="res://icon.png"
+config/icon="res://assets/Death.png"
 <<<<<<<HEADconfig/icon="res://icon.png"
 
 [input]
