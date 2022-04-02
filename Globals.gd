@@ -11,8 +11,11 @@ var hover_03: AudioStream = preload("res://assets/sound/UI/hover-03.wav")
 var select_click_01: AudioStream = preload("res://assets/sound/UI/select-click-01.wav")
 
 var clink_sounds = [clink_01, clink_02, clink_03]
+var clink = clink_sounds[0]
 var hover_sounds = [hover_01, hover_02, hover_03]
+var hover = hover_sounds[0]
 var push_bar_sounds = [push_bar_door_01, push_bar_door_02]
+var push_bar = push_bar_sounds[0]
 
 var current_song = ""
 var next_song = ""
@@ -22,23 +25,26 @@ var rounds_alive_score = 0
 
 
 func _play(sound):
-	if sound != current_song:
-		current_song = sound
-		match sound:
-			'clink':
-				$AudioStreamPlayer.set_stream(clink_sounds[randi() % clink_sounds.size()])
-				$AudioStreamPlayer.play()
-			'hover':
-				$AudioStreamPlayer.set_stream(hover_sounds[randi() % hover_sounds.size()])
-				$AudioStreamPlayer.play()
+	match sound:
+		'clink':
+			$AudioStreamPlayer.set_stream(clink)
+			$AudioStreamPlayer.play()
+			clink = clink_sounds[randi() % clink_sounds.size()]
+		'hover':
+			$AudioStreamPlayer.set_stream(hover)
+			$AudioStreamPlayer.play()
+			hover = hover_sounds[randi() % hover_sounds.size()]
+		'select':
+			$AudioStreamPlayer.set_stream(select_click_01)
+			$AudioStreamPlayer.play()
 
 
-func _on_AudioStreamPlayer_finished():
-	if next_song != "":
-		_play(next_song)
-		next_song = ""
-	else:
-		$AudioStreamPlayer.play()
+#func _on_AudioStreamPlayer_finished():
+#	if next_song != "":
+#		_play(next_song)
+#		next_song = ""
+#	else:
+#		$AudioStreamPlayer.play()
 
 func get_song_time_left():
 	if $AudioStreamPlayer.playing:

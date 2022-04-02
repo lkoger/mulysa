@@ -76,9 +76,10 @@ __meta__ = {
 margin_right = 1120.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 1024, 150 )
-custom_fonts/normal_font = SubResource( 1 )
-bbcode_text = "Speedy McWheels"
+custom_fonts/font = SubResource( 2 )
 text = "Speedy McWheels"
+align = 1
+valign = 1
 
 [node name="UnderTitle" type="HBoxContainer" parent="Menu"]
 margin_top = 154.0
@@ -187,4 +188,9 @@ size_flags_vertical = 3
 
 [node name="Node2D" type="Node2D" parent="Menu/UnderTitle/MoveArea"]
 
+[connection signal="button_up" from="Menu/UnderTitle/Options/NewGameButton" to="Menu/UnderTitle/Options/NewGameButton" method="_on_button_up"]
 [connection signal="mouse_entered" from="Menu/UnderTitle/Options/NewGameButton" to="Menu/UnderTitle/Options/NewGameButton" method="_on_mouse_entered"]
+[connection signal="button_up" from="Menu/UnderTitle/Options/SettingsButton" to="Menu/UnderTitle/Options/SettingsButton" method="_on_button_up"]
+[connection signal="mouse_entered" from="Menu/UnderTitle/Options/SettingsButton" to="Menu/UnderTitle/Options/SettingsButton" method="_on_mouse_entered"]
+[connection signal="button_up" from="Menu/UnderTitle/Options/CreditsButton" to="Menu/UnderTitle/Options/CreditsButton" method="_on_button_up"]
+[connection signal="mouse_entered" from="Menu/UnderTitle/Options/CreditsButton" to="Menu/UnderTitle/Options/CreditsButton" method="_on_mouse_entered"]
