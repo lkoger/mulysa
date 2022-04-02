@@ -101,3 +101,4 @@ func print_info():
 	print(num_adrenaline)
 	print(num_psychedelics)
 
+
