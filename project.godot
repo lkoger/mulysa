@@ -46,6 +46,13 @@ right={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Level"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Enemy"
+2d_physics/layer_4="Item"
+
 [physics]
 
 common/enable_pause_aware_picking=true
