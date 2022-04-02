@@ -52,11 +52,9 @@ func _change_state(new_state):
 		#$AnimatedSprite.play(state)
 
 func handle_psychedelic(item):
-	#item.queue_free()
 	num_psychedelics += 1
 
 func handle_adrenaline(item):
-	item.queue_free()
 	num_adrenaline += 1
 
 func print_info():
