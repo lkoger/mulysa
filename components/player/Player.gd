@@ -10,6 +10,7 @@ var flipped = false
 # Items
 var num_adrenaline = 0
 var num_psychedelics = 0
+var item_lifetime = 5.0
 
 func _ready():
 	pass
@@ -53,9 +54,29 @@ func _change_state(new_state):
 
 func handle_psychedelic(item):
 	num_psychedelics += 1
+	var timer: Timer = Timer.new()
+	timer.set_one_shot(true)
+	timer.set_wait_time(item_lifetime)
+	timer.connect("timeout", self, "decrement_psychadelic")
+	timer.connect("timeout", timer, "queue_free")
+	add_child(timer)
+	timer.start()
+
+func decrement_psychadelic():
+	num_psychedelics -= 1
 
 func handle_adrenaline(item):
 	num_adrenaline += 1
+	var timer: Timer = Timer.new()
+	timer.set_one_shot(true)
+	timer.set_wait_time(item_lifetime)
+	timer.connect("timeout", self, "decrement_adrenaline")
+	timer.connect("timeout", timer, "queue_free")
+	add_child(timer)
+	timer.start()
+
+func decrement_adrenaline():
+	num_adrenaline -= 1
 
 func print_info():
 	print(num_adrenaline)
