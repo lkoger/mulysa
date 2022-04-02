@@ -9,13 +9,21 @@ var flipped = false
 
 # Items
 var num_adrenaline = 0
+var max_adrenaline = 3
 var num_psychedelics = 0
+var max_psychedelics = 3
 var item_lifetime = 5.0
+
+signal died
 
 func _ready():
 	pass
 
 func _process(_delta):
+	if num_adrenaline > max_adrenaline or num_psychedelics > max_psychedelics:
+		die()
+		return
+	
 	velocity = Vector2.ZERO
 	var new_state = 'idle-forward'
 	
@@ -41,6 +49,9 @@ func _process(_delta):
 	$AnimatedSprite.flip_h = flipped
 	
 	velocity = velocity.normalized() * speed
+	if num_adrenaline > 0:
+		velocity = velocity * (1.0 + (num_adrenaline / 3.0))
+	
 
 # TODO(koger): Movement is snappy. Is this desirable? Do we want acceleration,
 # sliding, and other effects that make it feel more slugish?
@@ -77,6 +88,14 @@ func handle_adrenaline(item):
 
 func decrement_adrenaline():
 	num_adrenaline -= 1
+
+func die():
+	collision_layer = 0
+	collision_mask = 0
+	set_physics_process(false)
+	set_process(false)
+	emit_signal("died")
+	
 
 func print_info():
 	print(num_adrenaline)
