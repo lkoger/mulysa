@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/push-bar-door-01.wav-63a2602bf4ecbf9a7f589b34f126a2a7.sample"
+
+[deps]
+
+source_file="res://assets/sound/Door/push-bar-door-01.wav"
+dest_files=[ "res://.import/push-bar-door-01.wav-63a2602bf4ecbf9a7f589b34f126a2a7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
