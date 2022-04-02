@@ -76,10 +76,9 @@ __meta__ = {
 margin_right = 1120.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 1024, 150 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_text = "Speedy McWheels"
 text = "Speedy McWheels"
-align = 1
-valign = 1
 
 [node name="UnderTitle" type="HBoxContainer" parent="Menu"]
 margin_top = 154.0

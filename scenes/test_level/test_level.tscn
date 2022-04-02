@@ -43,6 +43,7 @@ navpoly = SubResource( 2 )
 
 [node name="Death" parent="Navigation2D" instance=ExtResource( 2 )]
 position = Vector2( -424, -192 )
+nav_tree_path = NodePath("..")
 
 [node name="Door" parent="." instance=ExtResource( 5 )]
 position = Vector2( -192, 88 )
