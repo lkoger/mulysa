@@ -2,16 +2,13 @@
 
 [ext_resource path="res://shaders/Psychedelic.gdshader" type="Shader" id=1]
 [ext_resource path="res://components/items/psychedelic/Psychedelic.gd" type="Script" id=2]
+[ext_resource path="res://assets/icon.png" type="Texture" id=3]
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 1 )
 shader_param/strength = 0.5
 shader_param/speed = 0.5
 shader_param/angle = 0.0
-
-[sub_resource type="StreamTexture" id=3]
-flags = 4
-load_path = "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 32, 32 )
@@ -23,7 +20,7 @@ script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 material = SubResource( 2 )
-texture = SubResource( 3 )
+texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 4 )
