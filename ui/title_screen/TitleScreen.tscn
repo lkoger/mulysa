@@ -77,7 +77,7 @@ margin_bottom = 150.0
 rect_min_size = Vector2( 1024, 150 )
 custom_fonts/normal_font = SubResource( 1 )
 bbcode_text = "Speedy McWheels"
-text = "  Speedy McWheels"
+text = "Speedy McWheels"
 
 [node name="UnderTitle" type="HBoxContainer" parent="Menu"]
 margin_top = 154.0

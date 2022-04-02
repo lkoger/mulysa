@@ -10,7 +10,7 @@ var path := PoolVector2Array()
 var player = null
 
 export (NodePath) var nav_tree_path = null
-onready var nav_node : AStarPath = get_node(nav_tree_path)
+onready var nav_node : Navigation2D = get_node(nav_tree_path)
 
 func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
