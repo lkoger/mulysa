@@ -7,6 +7,10 @@ var acceleration := 0.2
 var state = "idle-forward"
 var flipped = false
 
+# Items
+var num_adrenaline = 0
+var num_psychedelics = 0
+
 func _ready():
 	pass
 
@@ -29,6 +33,9 @@ func _process(_delta):
 		new_state = 'move-side'
 		flipped = false
 	
+	if Input.is_action_just_pressed("print_info"):
+		print_info()
+	
 	_change_state(new_state)
 	$AnimatedSprite.flip_h = flipped
 	
@@ -43,3 +50,16 @@ func _change_state(new_state):
 	if new_state != state:
 		state = new_state
 		#$AnimatedSprite.play(state)
+
+func handle_psychedelic(item):
+	#item.queue_free()
+	num_psychedelics += 1
+
+func handle_adrenaline(item):
+	item.queue_free()
+	num_adrenaline += 1
+
+func print_info():
+	print(num_adrenaline)
+	print(num_psychedelics)
+
