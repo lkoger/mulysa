@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://components/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://components/Death/Death.tscn" type="PackedScene" id=2]
 [ext_resource path="res://components/items/adrenaline/Adrenaline.tscn" type="PackedScene" id=3]
 [ext_resource path="res://components/items/psychedelic/Psychedelic.tscn" type="PackedScene" id=4]
 [ext_resource path="res://components/OneWay.tscn" type="PackedScene" id=5]
+[ext_resource path="res://components/OneWaySide.tscn" type="PackedScene" id=6]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
@@ -41,10 +42,12 @@ position = Vector2( 56, -136 )
 navpoly = SubResource( 2 )
 
 [node name="Death" parent="Navigation2D" instance=ExtResource( 2 )]
-position = Vector2( -192, -24 )
-collision_layer = 4
-collision_mask = 19
+position = Vector2( -424, -192 )
 
-[node name="StaticBody2D" parent="." instance=ExtResource( 5 )]
-position = Vector2( -192, 89 )
-scale = Vector2( 2.5, 2.5 )
+[node name="Door" parent="." instance=ExtResource( 5 )]
+position = Vector2( -192, 88 )
+scale = Vector2( 3, 3 )
+
+[node name="Door2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 56, 224 )
+scale = Vector2( 3, 3 )
