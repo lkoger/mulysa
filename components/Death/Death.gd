@@ -2,7 +2,7 @@ extends Area2D
 class_name Death
 
 var velocity := Vector2.ZERO
-var speed := 150.0
+var speed := 50.0
 var acceleration := 0.2
 var state = "idle-forward"
 var flipped = false
