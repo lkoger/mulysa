@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Area2D
 class_name Death
 
 var velocity := Vector2.ZERO
@@ -41,12 +41,16 @@ func _process(_delta):
 # TODO(koger): Movement is snappy. Is this desirable? Do we want acceleration,
 # sliding, and other effects that make it feel more slugish?
 func _physics_process(_delta):
-	velocity = move_and_slide(velocity)
+	#velocity = move_and_slide(velocity)
+	pass
 
 func _change_state(new_state):
 	if new_state != state:
 		state = new_state
 		#$AnimatedSprite.play(state)
 		
+func _on_Death_body_entered(body):
+	if body.has_method("DIE"):
+		body.DIE()
 		
 

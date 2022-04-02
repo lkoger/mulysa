@@ -81,4 +81,8 @@ func decrement_adrenaline():
 func print_info():
 	print(num_adrenaline)
 	print(num_psychedelics)
+	
+	
+func DIE():
+	print ("DEAD")
 
