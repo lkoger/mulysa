@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://components/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://assets/characters/wheely man-Sheet.png" type="Texture" id=2]
+[ext_resource path="res://assets/characters/wheely_man-Sheet.png" type="Texture" id=3]
 
 [sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 2 )
@@ -23,6 +24,22 @@ region = Rect2( 0, 0, 16, 32 )
 atlas = ExtResource( 2 )
 region = Rect2( 16, 0, 16, 32 )
 
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 3 )
+region = Rect2( 240, 0, 24, 32 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 3 )
+region = Rect2( 264, 0, 24, 32 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 3 )
+region = Rect2( 192, 0, 24, 32 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 3 )
+region = Rect2( 216, 0, 24, 32 )
+
 [sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 2 )
 region = Rect2( 32, 0, 16, 32 )
@@ -30,6 +47,10 @@ region = Rect2( 32, 0, 16, 32 )
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 2 )
 region = Rect2( 48, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 3 )
+region = Rect2( 336, 0, 24, 32 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -48,9 +69,24 @@ animations = [ {
 "name": "side",
 "speed": 3.0
 }, {
+"frames": [ SubResource( 13 ), SubResource( 14 ) ],
+"loop": true,
+"name": "down-side",
+"speed": 3.0
+}, {
+"frames": [ SubResource( 15 ), SubResource( 16 ) ],
+"loop": true,
+"name": "up-side",
+"speed": 3.0
+}, {
 "frames": [ SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "down",
+"speed": 3.0
+}, {
+"frames": [ SubResource( 17 ) ],
+"loop": true,
+"name": "dead",
 "speed": 3.0
 } ]
 
@@ -69,7 +105,7 @@ script = ExtResource( 1 )
 position = Vector2( 0, -8 )
 z_index = 1
 frames = SubResource( 1 )
-animation = "idle"
+animation = "up-side"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
