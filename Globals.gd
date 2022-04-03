@@ -66,18 +66,15 @@ func _stop_death_sound(sound):
 
 
 func _single_play(sound):
-	if sound != current_sound:
-		current_sound = sound
-		match sound:
-			'wheelchair':
-				$AudioStreamPlayer.set_volume_db(default_sfx_volume)
-				$AudioStreamPlayer.set_stream(wheelchair_sounds[randi() % wheelchair_sounds.size()])
-				$AudioStreamPlayer.play()
+	if current_sound != 'wheelchair':
+		current_sound = 'wheelchair'
+		$AudioStreamPlayer.set_volume_db(default_sfx_volume)
+		$AudioStreamPlayer.set_stream(wheelchair_sounds[randi() % wheelchair_sounds.size()])
+		$AudioStreamPlayer.play()
 
 func _stop_single_play(sound):
-	if sound == current_sound:
-		current_sound = ''
-		$AudioStreamPlayer.stop()
+	current_sound = ''
+	$AudioStreamPlayer.stop()
 
 
 func _change_sfx_volume(new_volume):
