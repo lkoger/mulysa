@@ -18,13 +18,20 @@ var level_light_hum: AudioStream = preload("res://assets/sound/Environmental/lig
 var wheelchair_01: AudioStream = preload("res://assets/sound/Wheelchair/wheelchair-loop-01.wav")
 var wheelchair_02: AudioStream = preload("res://assets/sound/Wheelchair/wheelchair-loop-02.wav")
 var scythe_scraping: AudioStream = preload("res://assets/sound/Death/metal-scraping.wav")
+var grunt_01: AudioStream = preload("res://assets/sound/UseItem/grunt-01.wav")
+var grunt_02: AudioStream = preload("res://assets/sound/UseItem/grunt-02.wav")
+var grunt_03: AudioStream = preload("res://assets/sound/UseItem/grunt-03.wav")
+var gulp_01: AudioStream = preload("res://assets/sound/UseItem/gulp.wav")
+
 
 var clink_sounds = [clink_01, clink_02, clink_03]
 var hover_sounds = [hover_01, hover_02, hover_03]
 var wheelchair_sounds = [wheelchair_01, wheelchair_02]
+var grunt_sounds = [grunt_01, grunt_02, grunt_03]
 var clink: AudioStream
 var hover: AudioStream
 var wheelchair: AudioStream
+var grunt: AudioStream
 
 var current_sound = ''
 var death_current_sound: AudioStream
@@ -66,13 +73,16 @@ func _stop_single_play(sound):
 
 func _play(sound):
 	var audio: AudioStream
+	var volume = 0.0
 	match sound:
 		'clink':
 			audio = clink_sounds[randi() % clink_sounds.size()]
 		'hover':
 			audio = hover_sounds[randi() % hover_sounds.size()]
+			volume = -10
 		'select':
 			audio = select_click_01
+			volume = -20
 		'door-open':
 			audio = door_open
 		'door-close':
@@ -85,10 +95,14 @@ func _play(sound):
 			audio = level_light_hum
 		'title-light-hum':
 			audio = title_light_hum
+		'useAdrenaline':
+			audio = grunt_sounds[randi() % grunt_sounds.size()]
+		'usePsychedelic':
+			audio = gulp_01
 	
 	var sound_obj = sound_direct.instance()
 	add_child(sound_obj)
-	sound_obj.play_sound(audio)
+	sound_obj.play_sound(audio, volume)
 
 
 
