@@ -187,8 +187,3 @@ size_flags_vertical = 3
 [node name="Node2D" type="Node2D" parent="Menu/UnderTitle/MoveArea"]
 
 [connection signal="button_up" from="Menu/UnderTitle/Options/NewGameButton" to="Menu/UnderTitle/Options/NewGameButton" method="_on_NewGameButton_button_up"]
-[connection signal="mouse_entered" from="Menu/UnderTitle/Options/NewGameButton" to="Menu/UnderTitle/Options/NewGameButton" method="_on_mouse_entered"]
-[connection signal="button_up" from="Menu/UnderTitle/Options/SettingsButton" to="Menu/UnderTitle/Options/SettingsButton" method="_on_button_up"]
-[connection signal="mouse_entered" from="Menu/UnderTitle/Options/SettingsButton" to="Menu/UnderTitle/Options/SettingsButton" method="_on_mouse_entered"]
-[connection signal="button_up" from="Menu/UnderTitle/Options/CreditsButton" to="Menu/UnderTitle/Options/CreditsButton" method="_on_button_up"]
-[connection signal="mouse_entered" from="Menu/UnderTitle/Options/CreditsButton" to="Menu/UnderTitle/Options/CreditsButton" method="_on_mouse_entered"]

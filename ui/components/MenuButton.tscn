@@ -12,16 +12,11 @@ font_path = "res://ui/other_assets/Hospital.ttf"
 size = 48
 font_data = SubResource( 1 )
 
-[node name="MenuButton" type="Button" groups=[
-"button",
-]]
+[node name="MenuButton" type="Button" groups=["button"]]
 margin_right = 12.0
 margin_bottom = 20.0
 custom_styles/normal = SubResource( 3 )
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Label" type="Label" parent="."]
 margin_right = 40.0
@@ -30,3 +25,6 @@ custom_fonts/font = SubResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[connection signal="button_up" from="." to="." method="_on_MenuButton_button_up"]
+[connection signal="mouse_entered" from="." to="." method="_on_MenuButton_mouse_entered"]
