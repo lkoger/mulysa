@@ -14,13 +14,21 @@ onready var nav_node : Navigation2D = get_node(nav_tree_path)
 
 func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
+	Globals._play_death_sound()
 	pass
+	
+func _get_distance_to_player_and_prepare_it():
+	var distance_to_player = self.global_position.distance_to(player.global_position)
+	var maths = -((float(4)/50)*distance_to_player)+40
+	return clamp(maths, 0, 30)
 
 func _process(delta):
 	path = nav_node.get_simple_path(self.position, player.position)
-	
 	# Calculate the movement distance for this frame
 	var distance_to_walk = speed * delta
+	
+	# Change the volume of the scythe scraping based on distance to the player
+	Globals._change_death_sound_volume(_get_distance_to_player_and_prepare_it())
 	
 	# Move the player along the path until he has run out of movement or the path ends.
 	while distance_to_walk > 0 and path.size() > 0:

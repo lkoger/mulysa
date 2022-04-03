@@ -15,3 +15,4 @@ func _on_button_up() -> void:
 
 func _on_NewGameButton_button_up() -> void:
 	Globals._play('light-off')
+	Globals._play('level-light-hum')

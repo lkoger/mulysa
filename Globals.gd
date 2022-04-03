@@ -15,17 +15,53 @@ var light_on: AudioStream = preload("res://assets/sound/UI/light-on.wav")
 var light_off: AudioStream = preload("res://assets/sound/UI/light-off.wav")
 var select_click_01: AudioStream = preload("res://assets/sound/UI/select-click-01.wav")
 var level_light_hum: AudioStream = preload("res://assets/sound/Environmental/light-hum.wav")
+var wheelchair_01: AudioStream = preload("res://assets/sound/Wheelchair/wheelchair-loop-01.wav")
+var wheelchair_02: AudioStream = preload("res://assets/sound/Wheelchair/wheelchair-loop-02.wav")
+var scythe_scraping: AudioStream = preload("res://assets/sound/Death/metal-scraping.wav")
 
 var clink_sounds = [clink_01, clink_02, clink_03]
-var clink = clink_sounds[0]
 var hover_sounds = [hover_01, hover_02, hover_03]
-var hover = hover_sounds[0]
+var wheelchair_sounds = [wheelchair_01, wheelchair_02]
+var clink: AudioStream
+var hover: AudioStream
+var wheelchair: AudioStream
 
-var current_song = ""
-var next_song = ""
+var current_sound = ''
+var death_current_sound: AudioStream
 
 var time_alive_score = 0
 var rounds_alive_score = 0
+
+
+func _play_death_sound():
+	if death_current_sound != scythe_scraping:
+		death_current_sound = scythe_scraping
+		$DeathsSound.set_stream(scythe_scraping)
+		$DeathsSound.play()
+		
+func _change_death_sound_volume(value):
+	$DeathsSound.set_volume_db(value)
+	#print($DeathsSound.volume_db)
+		
+func _stop_death_sound(sound):
+	if sound == death_current_sound:
+		var new: AudioStream
+		death_current_sound = new
+		$DeathsSound.stop()
+
+
+func _single_play(sound):
+	if sound != current_sound:
+		current_sound = sound
+		match sound:
+			'wheelchair':
+				$AudioStreamPlayer.set_stream(wheelchair_sounds[randi() % wheelchair_sounds.size()])
+				$AudioStreamPlayer.play()
+
+func _stop_single_play(sound):
+	if sound == current_sound:
+		current_sound = ''
+		$AudioStreamPlayer.stop()
 
 
 func _play(sound):
