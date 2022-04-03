@@ -29,17 +29,17 @@ func _process(_delta):
 	
 	if Input.is_action_pressed("up"):
 		velocity.y -= 1.0
-		new_state = 'move-up'
+		new_state = 'up'
 	elif Input.is_action_pressed("down"):
 		velocity.y += 1.0
-		new_state = 'move-down'
+		new_state = 'down'
 	if Input.is_action_pressed("left"):
 		velocity.x -= 1.0
-		new_state = 'move-side'
+		new_state = 'side'
 		flipped = true
 	elif Input.is_action_pressed("right"):
 		velocity.x += 1.0
-		new_state = 'move-side'
+		new_state = 'side'
 		flipped = false
 	
 	if Input.is_action_just_pressed("print_info"):
@@ -61,7 +61,7 @@ func _physics_process(_delta):
 func _change_state(new_state):
 	if new_state != state:
 		state = new_state
-		#$AnimatedSprite.play(state)
+		$AnimatedSprite.play(state)
 
 func handle_psychedelic(item):
 	num_psychedelics += 1
