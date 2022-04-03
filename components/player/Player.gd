@@ -10,7 +10,6 @@ var flipped = false
 # Items
 var has_adrenaline = true
 var adrenaline_timer = 600
-#onready var adrenaline_progress: TextureProgress = get_node("UI/UIArea/AdrenalineProgressBar")
 onready var adrenaline_progress: AnimatedSprite = get_node("UI/UIArea/AnimatedSprite")
 var has_psychedelics = true
 var psychedelics_timer = 600
