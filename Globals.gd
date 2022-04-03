@@ -50,7 +50,6 @@ func _play_death_sound():
 		
 func _change_death_sound_volume(value):
 	$DeathsSound.set_volume_db(value)
-	#print($DeathsSound.volume_db)
 		
 func _stop_death_sound(sound):
 	if sound == death_current_sound:
