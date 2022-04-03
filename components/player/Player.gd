@@ -7,6 +7,8 @@ var acceleration := 0.2
 var state = "idle-forward"
 var flipped = false
 
+onready var camera : Camera2D = get_node("Camera2D")
+
 # Items
 var has_adrenaline = false
 var adrenaline_timer: int = 600
@@ -14,6 +16,7 @@ onready var adrenaline_progress: AnimatedSprite = get_node("UI/UIArea/Adrenaline
 var has_psychedelics = false
 var psychedelics_timer: int = 1200
 onready var psychedelics_progress: AnimatedSprite = get_node("UI/UIArea/PillAnimatedSprite")
+var pill_max_effect = 20 * 60
 
 var item_lifetime = 10 * 60 # 60 fps time 10 should mean approximately 10 seconds.
 
@@ -72,6 +75,18 @@ func _process(_delta):
 		$AnimatedSprite.speed_scale = 1.3
 		velocity = velocity * 2.0
 
+func _physics_process(_delta):
+	update_adrenaline_progress()
+	update_psychedelics_progress()
+	update_camera()
+	velocity = move_and_slide(velocity)
+
+func update_camera():
+	var current_zoom = camera.zoom
+	var target_zoom = 0.2 + ((min(psychedelics_timer,1200)/1200.0) * 0.4)
+	var new_zoom = lerp(current_zoom, Vector2(target_zoom, target_zoom), 0.2)
+	camera.zoom = new_zoom
+
 func update_psychedelics_progress():
 	psychedelics_timer = max(0, psychedelics_timer-1)
 	psychedelics_progress.frame = (9 - min(9, psychedelics_timer/120))
@@ -92,11 +107,6 @@ func update_adrenaline_progress():
 	elif not has_adrenaline:
 		has_adrenaline = true
 		emit_signal("take_adrenaline")
-
-func _physics_process(_delta):
-	update_adrenaline_progress()
-	update_psychedelics_progress()
-	velocity = move_and_slide(velocity)
 
 func _change_state(new_state):
 	if new_state != state:
