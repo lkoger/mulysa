@@ -8,11 +8,11 @@ var state = "idle-forward"
 var flipped = false
 
 # Items
-var has_adrenaline = false
-var adrenaline_timer = 0
+var has_adrenaline = true
+var adrenaline_timer = 600
 onready var adrenaline_progress: TextureProgress = get_node("UI/UIArea/AdrenalineProgressBar")
-var has_psychedelics = 0
-var psychedelics_timer = 0
+var has_psychedelics = true
+var psychedelics_timer = 600
 var item_lifetime = 10 * 60 # 60 fps time 10 should mean approximately 10 seconds.
 
 
