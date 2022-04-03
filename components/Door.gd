@@ -17,14 +17,16 @@ func _ready():
 
 
 func _on_StaticBody2D_area_entered(area):
-	$AnimatedSprite.play("default",false)
-	Globals._play('door-open')
+	if area.name == "Death":
+		$AnimatedSprite.play("default",false)
+		Globals._play('door-open')
 
 
 
 func _on_StaticBody2D_area_exited(area):
-	$AnimatedSprite.play("default",true)
-	Globals._play('door-close')
+	if area.name == "Death":
+		$AnimatedSprite.play("default",true)
+		Globals._play('door-close')
 
 
 func _on_Door_body_entered(body):
