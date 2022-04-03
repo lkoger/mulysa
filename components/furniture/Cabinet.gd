@@ -41,6 +41,7 @@ func _on_Cabinet_body_entered(body):
 			_display_item_aquired($Position2D/Adrenaline)
 		else:
 			_display_item_aquired($Position2D/Pill)
+		Globals._play('clink')
 
 func _display_item_aquired(item):
 	$Position2D/ItemTween1.interpolate_property(item, "modulate", Color(1,1,1,0), Color(1,1,1,1), 0.75)
