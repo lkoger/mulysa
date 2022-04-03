@@ -67,9 +67,12 @@ func _change_state(new_state):
 
 func _change_visibility():
 	$Tween.stop_all()
-	var visibility = min(player.num_psychedelics, player.max_psychedelics) / float(player.max_psychedelics)
-	$Tween.interpolate_property(self, "modulate", modulate, Color(1,1,1,visibility), 1.0)
-	$Tween.start()
+	if player.has_psychedelics:
+		$Tween.interpolate_property(self, "modulate", modulate, Color(1,1,1,0.33), 1.5)
+		$Tween.start()
+	else:
+		$Tween.interpolate_property(self, "modulate", modulate, Color(1,1,1,0), 1.5)
+		$Tween.start()
 
 func _on_Death_body_entered(body):
 	if body.has_method("die"):

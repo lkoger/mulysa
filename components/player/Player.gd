@@ -11,8 +11,8 @@ var flipped = false
 var has_adrenaline = false
 var adrenaline_timer = 0
 onready var adrenaline_progress: TextureProgress = get_node("UI/UIArea/AdrenalineProgressBar")
-var num_psychedelics = 0
-var max_psychedelics = 3
+var has_psychedelics = 0
+var psychedelics_timer = 0
 var item_lifetime = 10 * 60 # 60 fps time 10 should mean approximately 10 seconds.
 
 
@@ -69,6 +69,13 @@ func _process(_delta):
 		$AnimatedSprite.speed_scale = 1.3
 		velocity = velocity * 2.0
 
+func update_psychedelics_progress():
+	psychedelics_timer = max(0, psychedelics_timer-1)
+	#psychedelics_progress.value = min((psychedelics_timer/6), 100)
+	if psychedelics_timer == 0:
+		has_psychedelics = false
+		emit_signal("psychadelic_wears_off")
+
 func update_adrenaline_progress():
 	adrenaline_timer = max(0, adrenaline_timer-1)
 	adrenaline_progress.value = min((adrenaline_timer/6), 100)
@@ -88,19 +95,9 @@ func _change_state(new_state):
 
 func handle_psychedelic(item):
 	Globals._play('usePsychedelic')
-	num_psychedelics += 1
-	var timer: Timer = Timer.new()
-	timer.set_one_shot(true)
-	timer.set_wait_time(item_lifetime)
-	timer.connect("timeout", self, "decrement_psychadelic")
-	timer.connect("timeout", timer, "queue_free")
-	add_child(timer)
-	timer.start()
+	psychedelics_timer += item_lifetime
+	has_psychedelics = true
 	emit_signal("take_psychedelic")
-
-func decrement_psychadelic():
-	num_psychedelics -= 1
-	emit_signal("psychadelic_wears_off")
 
 func handle_adrenaline(item):
 	Globals._play('useAdrenaline')
@@ -108,8 +105,6 @@ func handle_adrenaline(item):
 	has_adrenaline = true
 	emit_signal("take_adrenaline")
 
-#func decrement_adrenaline():
-#	num_adrenaline -= 1
 
 func die():
 	collision_layer = 0
@@ -122,6 +117,6 @@ func die():
 
 func print_info():
 	print(adrenaline_timer)
-	print(num_psychedelics)
+	print(psychedelics_timer)
 
 
