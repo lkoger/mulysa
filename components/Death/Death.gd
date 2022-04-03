@@ -73,3 +73,6 @@ func _on_Death_body_entered(body):
 		body.die()
 		
 
+func _on_Player_died():
+	_change_state("idle")
+	set_process(false)
