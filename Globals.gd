@@ -32,6 +32,8 @@ var death_current_sound: AudioStream
 var time_alive_score = 0
 var rounds_alive_score = 0
 
+func _ready():
+	randomize()
 
 func _play_death_sound():
 	if death_current_sound != scythe_scraping:
