@@ -160,7 +160,7 @@ texture = ExtResource( 5 )
 visible = false
 position = Vector2( -16, 0 )
 frames = SubResource( 24 )
-frame = 2
+frame = 19
 playing = true
 
 [node name="ItemTween1" type="Tween" parent="Position2D"]

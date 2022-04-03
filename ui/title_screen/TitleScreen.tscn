@@ -160,7 +160,7 @@ margin_right = 695.0
 margin_bottom = 163.0
 custom_fonts/font = SubResource( 8 )
 text = "Play"
-next_scene = "res://scenes/test_level/test_level.tscn"
+next_scene = "res://scenes/test_level/tilemap_level.tscn"
 
 [node name="SettingsButton" parent="Menu/UnderTitle/Options" instance=ExtResource( 2 )]
 margin_top = 203.0
