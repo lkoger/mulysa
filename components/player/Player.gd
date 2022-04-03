@@ -14,6 +14,7 @@ var num_psychedelics = 0
 var max_psychedelics = 3
 var item_lifetime = 10.0
 
+
 signal died
 
 func _ready():
@@ -44,6 +45,11 @@ func _process(_delta):
 	
 	if Input.is_action_just_pressed("print_info"):
 		print_info()
+		
+	if not 'idle' in new_state:
+		Globals._single_play('wheelchair')
+	else:
+		Globals._stop_single_play('wheelchair')
 	
 	_change_state(new_state)
 	$AnimatedSprite.flip_h = flipped

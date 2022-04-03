@@ -10,4 +10,6 @@ volume_db = -10.0
 
 [node name="Tween" type="Tween" parent="."]
 
+[node name="DeathsSound" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
