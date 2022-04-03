@@ -22,6 +22,7 @@ var grunt_01: AudioStream = preload("res://assets/sound/UseItem/grunt-01.wav")
 var grunt_02: AudioStream = preload("res://assets/sound/UseItem/grunt-02.wav")
 var grunt_03: AudioStream = preload("res://assets/sound/UseItem/grunt-03.wav")
 var gulp_01: AudioStream = preload("res://assets/sound/UseItem/gulp.wav")
+var get_pills: AudioStream = preload("res://assets/sound/UseItem/getpills.wav")
 var tv_static: AudioStream = preload("res://assets/sound/Environmental/tv-static.wav")
 
 
@@ -110,7 +111,7 @@ func _play(sound):
 		'useAdrenaline':
 			audio = grunt_sounds[randi() % grunt_sounds.size()]
 		'usePsychedelic':
-			audio = gulp_01
+			audio = get_pills
 	var sound_obj = sound_direct.instance()
 	add_child(sound_obj)
 	sound_obj.play_sound(audio, volume)
