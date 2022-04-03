@@ -71,7 +71,6 @@ func _process(_delta):
 
 func update_psychedelics_progress():
 	psychedelics_timer = max(0, psychedelics_timer-1)
-	#psychedelics_progress.value = min((psychedelics_timer/6), 100)
 	if psychedelics_timer == 0:
 		has_psychedelics = false
 		emit_signal("psychadelic_wears_off")
@@ -81,9 +80,7 @@ func update_adrenaline_progress():
 	adrenaline_progress.frame = (9 - min(9, adrenaline_timer/60))
 	if adrenaline_timer == 0:
 		has_adrenaline = false
-	
-# TODO(koger): Movement is snappy. Is this desirable? Do we want acceleration,
-# sliding, and other effects that make it feel more slugish?
+
 func _physics_process(_delta):
 	update_adrenaline_progress()
 	velocity = move_and_slide(velocity)
