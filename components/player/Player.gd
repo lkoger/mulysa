@@ -111,6 +111,7 @@ func die():
 	collision_mask = 0
 	set_physics_process(false)
 	set_process(false)
+	Globals._stop_single_play('wheelchair')
 	emit_signal("died")
 	_change_state('dead')
 	
