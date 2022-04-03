@@ -8,11 +8,12 @@ var state = "idle-forward"
 var flipped = false
 
 # Items
-var num_adrenaline = 0
-var max_adrenaline = 3
+var has_adrenaline = false
+var adrenaline_timer = 0
+onready var adrenaline_progress: TextureProgress = get_node("UI/UIArea/AdrenalineProgressBar")
 var num_psychedelics = 0
 var max_psychedelics = 3
-var item_lifetime = 10.0
+var item_lifetime = 10 * 60 # 60 fps time 10 should mean approximately 10 seconds.
 
 
 signal died
@@ -64,13 +65,20 @@ func _process(_delta):
 	$AnimatedSprite.flip_h = flipped
 	
 	velocity = velocity.normalized() * speed
-	velocity = velocity * (1.0 + (min(num_adrenaline, 3) / 1.5))
-	$AnimatedSprite.speed_scale = (1.0 + (min(num_adrenaline, 3) / 1.5))
-	
+	if has_adrenaline:
+		$AnimatedSprite.speed_scale = 1.3
+		velocity = velocity * 2.0
 
+func update_adrenaline_progress():
+	adrenaline_timer = max(0, adrenaline_timer-1)
+	adrenaline_progress.value = min((adrenaline_timer/6), 100)
+	if adrenaline_timer == 0:
+		has_adrenaline = false
+	
 # TODO(koger): Movement is snappy. Is this desirable? Do we want acceleration,
 # sliding, and other effects that make it feel more slugish?
 func _physics_process(_delta):
+	update_adrenaline_progress()
 	velocity = move_and_slide(velocity)
 
 func _change_state(new_state):
@@ -96,18 +104,12 @@ func decrement_psychadelic():
 
 func handle_adrenaline(item):
 	#Globals._play('useAdrenaline')
-	num_adrenaline += 1
-	var timer: Timer = Timer.new()
-	timer.set_one_shot(true)
-	timer.set_wait_time(item_lifetime)
-	timer.connect("timeout", self, "decrement_adrenaline")
-	timer.connect("timeout", timer, "queue_free")
-	add_child(timer)
-	timer.start()
+	adrenaline_timer += item_lifetime
+	has_adrenaline = true
 	emit_signal("take_adrenaline")
 
-func decrement_adrenaline():
-	num_adrenaline -= 1
+#func decrement_adrenaline():
+#	num_adrenaline -= 1
 
 func die():
 	collision_layer = 0
@@ -119,7 +121,7 @@ func die():
 	
 
 func print_info():
-	print(num_adrenaline)
+	print(adrenaline_timer)
 	print(num_psychedelics)
 
 
