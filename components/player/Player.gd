@@ -2,7 +2,7 @@ extends KinematicBody2D
 class_name Player
 
 var velocity := Vector2.ZERO
-var speed := 60.0
+var speed := 45.0
 var acceleration := 0.2
 var state = "idle-forward"
 var flipped = false
@@ -25,7 +25,7 @@ func _process(_delta):
 #		return
 	
 	velocity = Vector2.ZERO
-	var new_state = 'idle-forward'
+	var new_state = 'idle'
 	
 	if Input.is_action_pressed("up"):
 		velocity.y -= 1.0
@@ -49,8 +49,8 @@ func _process(_delta):
 	$AnimatedSprite.flip_h = flipped
 	
 	velocity = velocity.normalized() * speed
-	if num_adrenaline > 0:
-		velocity = velocity * (1.0 + (min(num_adrenaline, 3) / 1.5))
+	velocity = velocity * (1.0 + (min(num_adrenaline, 3) / 1.5))
+	$AnimatedSprite.speed_scale = (1.0 + (min(num_adrenaline, 3) / 1.5))
 	
 
 # TODO(koger): Movement is snappy. Is this desirable? Do we want acceleration,
