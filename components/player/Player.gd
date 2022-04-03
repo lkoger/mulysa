@@ -10,7 +10,8 @@ var flipped = false
 # Items
 var has_adrenaline = true
 var adrenaline_timer = 600
-onready var adrenaline_progress: TextureProgress = get_node("UI/UIArea/AdrenalineProgressBar")
+#onready var adrenaline_progress: TextureProgress = get_node("UI/UIArea/AdrenalineProgressBar")
+onready var adrenaline_progress: AnimatedSprite = get_node("UI/UIArea/AnimatedSprite")
 var has_psychedelics = true
 var psychedelics_timer = 600
 var item_lifetime = 10 * 60 # 60 fps time 10 should mean approximately 10 seconds.
@@ -22,7 +23,7 @@ signal psychadelic_wears_off
 signal take_adrenaline
 
 func _ready():
-	pass
+	adrenaline_progress.animation = "injecting"
 
 func _process(_delta):
 	velocity = Vector2.ZERO
@@ -78,7 +79,7 @@ func update_psychedelics_progress():
 
 func update_adrenaline_progress():
 	adrenaline_timer = max(0, adrenaline_timer-1)
-	adrenaline_progress.value = min((adrenaline_timer/6), 100)
+	adrenaline_progress.frame = (9 - min(9, adrenaline_timer/60))
 	if adrenaline_timer == 0:
 		has_adrenaline = false
 	
