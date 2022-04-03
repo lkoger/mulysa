@@ -2,7 +2,7 @@ extends KinematicBody2D
 class_name Player
 
 var velocity := Vector2.ZERO
-var speed := 200.0
+var speed := 60.0
 var acceleration := 0.2
 var state = "idle-forward"
 var flipped = false
@@ -12,7 +12,7 @@ var num_adrenaline = 0
 var max_adrenaline = 3
 var num_psychedelics = 0
 var max_psychedelics = 3
-var item_lifetime = 5.0
+var item_lifetime = 10.0
 
 signal died
 
@@ -20,9 +20,9 @@ func _ready():
 	pass
 
 func _process(_delta):
-	if num_adrenaline > max_adrenaline or num_psychedelics > max_psychedelics:
-		die()
-		return
+#	if num_adrenaline > max_adrenaline or num_psychedelics > max_psychedelics:
+#		die()
+#		return
 	
 	velocity = Vector2.ZERO
 	var new_state = 'idle-forward'
@@ -50,7 +50,7 @@ func _process(_delta):
 	
 	velocity = velocity.normalized() * speed
 	if num_adrenaline > 0:
-		velocity = velocity * (1.0 + (num_adrenaline / 3.0))
+		velocity = velocity * (1.0 + (min(num_adrenaline, 3) / 1.5))
 	
 
 # TODO(koger): Movement is snappy. Is this desirable? Do we want acceleration,
