@@ -84,7 +84,7 @@ func _physics_process(_delta):
 func update_camera():
 	var current_zoom = camera.zoom
 	var target_zoom = 0.2 + ((min(psychedelics_timer,1200)/1200.0) * 0.4)
-	var new_zoom = lerp(current_zoom, Vector2(target_zoom, target_zoom), 0.2)
+	var new_zoom = lerp(current_zoom, Vector2(target_zoom, target_zoom), 0.1)
 	camera.zoom = new_zoom
 
 func update_psychedelics_progress():
