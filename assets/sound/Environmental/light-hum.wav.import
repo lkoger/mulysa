@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/light-hum.wav-5a3a6ff04f77af755a5605afe58f6189.sample"
+
+[deps]
+
+source_file="res://assets/sound/Environmental/light-hum.wav"
+dest_files=[ "res://.import/light-hum.wav-5a3a6ff04f77af755a5605afe58f6189.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
