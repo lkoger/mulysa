@@ -168,6 +168,7 @@ margin_right = 695.0
 margin_bottom = 263.0
 custom_fonts/font = SubResource( 10 )
 text = "Settings"
+next_scene = "res://scenes/SettingsScreen.tscn"
 
 [node name="CreditsButton" parent="Menu/UnderTitle/Options" instance=ExtResource( 2 )]
 margin_top = 303.0

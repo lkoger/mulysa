@@ -17,6 +17,7 @@ func _ready():
 func _get_distance_to_player_and_prepare_it():
 	var distance_to_player = self.global_position.distance_to(player.global_position)
 	var maths = -((float(4)/50)*distance_to_player)+40
+#	return clamp(maths, Globals.death_sound_min_volume, Globals.death_sound_max_volume)
 	return clamp(maths, 0, 30)
 
 func _process(delta):
@@ -72,6 +73,7 @@ func _change_visibility():
 
 func _on_Death_body_entered(body):
 	if body.has_method("die"):
+		Globals._stop_death_sound('scythe_scraping')
 		body.die()
 
 func _on_Player_died():

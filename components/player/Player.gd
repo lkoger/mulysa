@@ -79,7 +79,7 @@ func _change_state(new_state):
 		$AnimatedSprite.play(state)
 
 func handle_psychedelic(item):
-	#Globals._play('usePsychedelic')
+	Globals._play('usePsychedelic')
 	num_psychedelics += 1
 	var timer: Timer = Timer.new()
 	timer.set_one_shot(true)
@@ -95,7 +95,7 @@ func decrement_psychadelic():
 	emit_signal("psychadelic_wears_off")
 
 func handle_adrenaline(item):
-	#Globals._play('useAdrenaline')
+	Globals._play('useAdrenaline')
 	num_adrenaline += 1
 	var timer: Timer = Timer.new()
 	timer.set_one_shot(true)

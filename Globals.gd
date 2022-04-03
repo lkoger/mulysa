@@ -22,9 +22,10 @@ var grunt_01: AudioStream = preload("res://assets/sound/UseItem/grunt-01.wav")
 var grunt_02: AudioStream = preload("res://assets/sound/UseItem/grunt-02.wav")
 var grunt_03: AudioStream = preload("res://assets/sound/UseItem/grunt-03.wav")
 var gulp_01: AudioStream = preload("res://assets/sound/UseItem/gulp.wav")
+var tv_static: AudioStream = preload("res://assets/sound/Environmental/tv-static.wav")
 
 
-var clink_sounds = [clink_01, clink_02, clink_03]
+#var clink_sounds = [clink_01, clink_02, clink_03]
 var hover_sounds = [hover_01, hover_02, hover_03]
 var wheelchair_sounds = [wheelchair_01, wheelchair_02]
 var grunt_sounds = [grunt_01, grunt_02, grunt_03]
@@ -34,17 +35,24 @@ var wheelchair: AudioStream
 var grunt: AudioStream
 
 var current_sound = ''
-var death_current_sound: AudioStream
+var death_current_sound = ''
 
 var time_alive_score = 0
 var rounds_alive_score = 0
+
+var default_sfx_volume = 0.0
+#var death_sound_max_volume = 30
+#var death_sound_min_volume = death_sound_max_volume - 30
+
+
+
 
 func _ready():
 	randomize()
 
 func _play_death_sound():
-	if death_current_sound != scythe_scraping:
-		death_current_sound = scythe_scraping
+	if death_current_sound != 'scythe_scraping':
+		death_current_sound = 'scythe_scraping'
 		$DeathsSound.set_stream(scythe_scraping)
 		$DeathsSound.play()
 		
@@ -52,10 +60,9 @@ func _change_death_sound_volume(value):
 	$DeathsSound.set_volume_db(value)
 		
 func _stop_death_sound(sound):
-	if sound == death_current_sound:
-		var new: AudioStream
-		death_current_sound = new
-		$DeathsSound.stop()
+	death_current_sound = ''
+	$DeathsSound.stop()
+	_play('light-off')
 
 
 func _single_play(sound):
@@ -63,6 +70,7 @@ func _single_play(sound):
 		current_sound = sound
 		match sound:
 			'wheelchair':
+				$AudioStreamPlayer.set_volume_db(default_sfx_volume)
 				$AudioStreamPlayer.set_stream(wheelchair_sounds[randi() % wheelchair_sounds.size()])
 				$AudioStreamPlayer.play()
 
@@ -72,12 +80,18 @@ func _stop_single_play(sound):
 		$AudioStreamPlayer.stop()
 
 
+func _change_sfx_volume(new_volume):
+	default_sfx_volume = new_volume
+#	death_sound_max_volume = default_sfx_volume
+#	death_sound_min_volume = death_sound_max_volume - 30
+
+
 func _play(sound):
 	var audio: AudioStream
-	var volume = 0.0
+	var volume = default_sfx_volume
 	match sound:
-		'clink':
-			audio = clink_sounds[randi() % clink_sounds.size()]
+#		'clink':
+#			audio = clink_sounds[randi() % clink_sounds.size()]
 		'hover':
 			audio = hover_sounds[randi() % hover_sounds.size()]
 			volume = -10
@@ -100,7 +114,6 @@ func _play(sound):
 			audio = grunt_sounds[randi() % grunt_sounds.size()]
 		'usePsychedelic':
 			audio = gulp_01
-	
 	var sound_obj = sound_direct.instance()
 	add_child(sound_obj)
 	sound_obj.play_sound(audio, volume)
