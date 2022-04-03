@@ -4,7 +4,7 @@ class_name Death
 var velocity := Vector2.ZERO
 var speed := 50.0
 var acceleration := 0.2
-var state = "idle-forward"
+var state = "right"
 var flipped = false
 var path := PoolVector2Array()
 var player = null
@@ -35,7 +35,9 @@ func _process(delta):
 		var distance_to_next_point = position.distance_to(path[0])
 		if distance_to_walk <= distance_to_next_point:
 			# The player does not have enough movement left to get to the next point.
-			position += position.direction_to(path[0]) * distance_to_walk
+			var direction = position.direction_to(path[0])
+			chage_state_based_on_direction(direction)
+			position += direction * distance_to_walk
 		else:
 			# The player get to the next point
 			position = path[0]
@@ -43,18 +45,28 @@ func _process(delta):
 		# Update the distance to walk
 		distance_to_walk -= distance_to_next_point
 
-func _move():
-	for p in nav_node.path:
-		pass
-
 func _physics_process(_delta):
 	#velocity = move_and_slide(velocity)
 	pass
 
+func chage_state_based_on_direction(direction: Vector2):
+	var angle = rad2deg(direction.angle())
+	var new_state = "right"
+	if abs(angle) <= 45:
+		new_state = "right"
+	elif abs(angle) >= 135:
+		new_state = "left"
+	elif angle > 0:
+		new_state = "up"
+	else:
+		new_state = "down"
+	
+	_change_state(new_state)
+
 func _change_state(new_state):
 	if new_state != state:
 		state = new_state
-		#$AnimatedSprite.play(state)
+		$AnimatedSprite.play(state)
 		
 func _on_Death_body_entered(body):
 	if body.has_method("die"):

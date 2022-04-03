@@ -2,7 +2,7 @@ extends KinematicBody2D
 class_name Player
 
 var velocity := Vector2.ZERO
-var speed := 60.0
+var speed := 45.0
 var acceleration := 0.2
 var state = "idle-forward"
 var flipped = false
@@ -26,21 +26,21 @@ func _process(_delta):
 #		return
 	
 	velocity = Vector2.ZERO
-	var new_state = 'idle-forward'
+	var new_state = 'idle'
 	
 	if Input.is_action_pressed("up"):
 		velocity.y -= 1.0
-		new_state = 'move-up'
+		new_state = 'up'
 	elif Input.is_action_pressed("down"):
 		velocity.y += 1.0
-		new_state = 'move-down'
+		new_state = 'down'
 	if Input.is_action_pressed("left"):
 		velocity.x -= 1.0
-		new_state = 'move-side'
+		new_state = 'side'
 		flipped = true
 	elif Input.is_action_pressed("right"):
 		velocity.x += 1.0
-		new_state = 'move-side'
+		new_state = 'side'
 		flipped = false
 	
 	if Input.is_action_just_pressed("print_info"):
@@ -55,8 +55,8 @@ func _process(_delta):
 	$AnimatedSprite.flip_h = flipped
 	
 	velocity = velocity.normalized() * speed
-	if num_adrenaline > 0:
-		velocity = velocity * (1.0 + (min(num_adrenaline, 3) / 1.5))
+	velocity = velocity * (1.0 + (min(num_adrenaline, 3) / 1.5))
+	$AnimatedSprite.speed_scale = (1.0 + (min(num_adrenaline, 3) / 1.5))
 	
 
 # TODO(koger): Movement is snappy. Is this desirable? Do we want acceleration,
@@ -67,7 +67,7 @@ func _physics_process(_delta):
 func _change_state(new_state):
 	if new_state != state:
 		state = new_state
-		#$AnimatedSprite.play(state)
+		$AnimatedSprite.play(state)
 
 func handle_psychedelic(item):
 	num_psychedelics += 1

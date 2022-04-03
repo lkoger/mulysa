@@ -22,7 +22,7 @@ func _on_Timer_timeout():
 			$items.add_child(psychedelic_scene.instance())
 #			$Position2D/Pill.visible = true
 		full = true
-		monitoring = true
+		set_deferred("monitoring", true)
 		$Position2D/Notification.visible = true
 		check_for_bodies_on_activation()
 
@@ -34,7 +34,7 @@ func check_for_bodies_on_activation():
 func _on_Cabinet_body_entered(body):
 	if full:
 		full = false
-		monitoring = false
+		set_deferred("monitoring", false)
 		$items.get_children()[0].interact(body)
 		$Position2D/Notification.visible = false
 		if $items.get_children()[0].item_type == "Adrenaline":
