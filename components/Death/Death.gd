@@ -1,11 +1,8 @@
 extends Area2D
 class_name Death
 
-var velocity := Vector2.ZERO
 var speed := 50.0
-var acceleration := 0.2
 var state = "right"
-var flipped = false
 var path := PoolVector2Array()
 var player = null
 
@@ -15,7 +12,7 @@ onready var nav_node : Navigation2D = get_node(nav_tree_path)
 func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
 	Globals._play_death_sound()
-	pass
+	modulate = Color(1,1,1,0)
 	
 func _get_distance_to_player_and_prepare_it():
 	var distance_to_player = self.global_position.distance_to(player.global_position)
@@ -46,7 +43,6 @@ func _process(delta):
 		distance_to_walk -= distance_to_next_point
 
 func _physics_process(_delta):
-	#velocity = move_and_slide(velocity)
 	pass
 
 func chage_state_based_on_direction(direction: Vector2):
@@ -57,9 +53,9 @@ func chage_state_based_on_direction(direction: Vector2):
 	elif abs(angle) >= 135:
 		new_state = "left"
 	elif angle > 0:
-		new_state = "up"
-	else:
 		new_state = "down"
+	else:
+		new_state = "up"
 	
 	_change_state(new_state)
 
@@ -67,12 +63,29 @@ func _change_state(new_state):
 	if new_state != state:
 		state = new_state
 		$AnimatedSprite.play(state)
-		
+
+func _change_visibility():
+	$Tween.stop_all()
+	var visibility = min(player.num_psychedelics, player.max_psychedelics) / float(player.max_psychedelics)
+	$Tween.interpolate_property(self, "modulate", modulate, Color(1,1,1,visibility), 1.0)
+	$Tween.start()
+
 func _on_Death_body_entered(body):
 	if body.has_method("die"):
 		body.die()
-		
 
 func _on_Player_died():
 	_change_state("idle")
 	set_process(false)
+	# Make visible on player death
+	$Tween.stop_all()
+	$Tween.interpolate_property(self, "modulate", modulate, Color(1,1,1,1), 1.0)
+	$Tween.start()
+
+
+func _on_Player_take_psychedelic():
+	_change_visibility()
+
+
+func _on_Player_psychadelic_wears_off():
+	_change_visibility()

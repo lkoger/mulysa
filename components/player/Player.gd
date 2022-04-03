@@ -16,15 +16,14 @@ var item_lifetime = 10.0
 
 
 signal died
+signal take_psychedelic
+signal psychadelic_wears_off
+signal take_adrenaline
 
 func _ready():
 	pass
 
 func _process(_delta):
-#	if num_adrenaline > max_adrenaline or num_psychedelics > max_psychedelics:
-#		die()
-#		return
-	
 	velocity = Vector2.ZERO
 	var new_state = 'idle'
 	
@@ -36,13 +35,23 @@ func _process(_delta):
 		new_state = 'down'
 	if Input.is_action_pressed("left"):
 		velocity.x -= 1.0
-		new_state = 'side'
+		if new_state == 'up':
+			new_state = 'up-side'
+		elif new_state == 'down':
+			new_state = 'down-side'
+		else:
+			new_state = 'side'
 		flipped = true
 	elif Input.is_action_pressed("right"):
 		velocity.x += 1.0
-		new_state = 'side'
+		if new_state == 'up':
+			new_state = 'up-side'
+		elif new_state == 'down':
+			new_state = 'down-side'
+		else:
+			new_state = 'side'
 		flipped = false
-	
+		
 	if Input.is_action_just_pressed("print_info"):
 		print_info()
 		
@@ -79,9 +88,11 @@ func handle_psychedelic(item):
 	timer.connect("timeout", timer, "queue_free")
 	add_child(timer)
 	timer.start()
+	emit_signal("take_psychedelic")
 
 func decrement_psychadelic():
 	num_psychedelics -= 1
+	emit_signal("psychadelic_wears_off")
 
 func handle_adrenaline(item):
 	#Globals._play('useAdrenaline')
@@ -93,6 +104,7 @@ func handle_adrenaline(item):
 	timer.connect("timeout", timer, "queue_free")
 	add_child(timer)
 	timer.start()
+	emit_signal("take_adrenaline")
 
 func decrement_adrenaline():
 	num_adrenaline -= 1
@@ -103,6 +115,7 @@ func die():
 	set_physics_process(false)
 	set_process(false)
 	emit_signal("died")
+	_change_state('dead')
 	
 
 func print_info():

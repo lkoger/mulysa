@@ -48,6 +48,6 @@ func _display_item_aquired(item):
 	$Position2D/ItemTween1.start()
 
 
-func _on_ItemTween_tween_completed(object, key):
+func _on_ItemTween_tween_completed(object, _key):
 	$Position2D/ItemTween2.interpolate_property(object, "modulate", Color(1,1,1,1), Color(1,1,1,0), 1.5)
 	$Position2D/ItemTween2.start()
