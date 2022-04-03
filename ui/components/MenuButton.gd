@@ -11,3 +11,7 @@ func _on_mouse_entered() -> void:
 
 func _on_button_up() -> void:
 	Globals._play('select')
+
+
+func _on_NewGameButton_button_up() -> void:
+	Globals._play('light-off')
