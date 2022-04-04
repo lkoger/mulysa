@@ -89,6 +89,13 @@ func _physics_process(_delta):
 	update_vignette()
 	velocity = move_and_slide(velocity)
 
+func connect_with_death():
+	var deaths = get_tree().get_nodes_in_group("death")
+	if len(deaths) > 0:
+		death = deaths[0]
+		connect("take_psychedelic", death, "_on_Player_take_psychedelic")
+		connect("psychadelic_wears_off", death, "_on_Player_psychadelic_wears_off")
+
 func play_and_schedule_heartbeat():
 	if dead:
 		heart_animation.frame = 0
@@ -100,9 +107,7 @@ func play_and_schedule_heartbeat():
 	var heart_rate = 1.2
 	var heart_animation_rate = 1.0
 	if not death:
-		var deaths = get_tree().get_nodes_in_group("death")
-		if len(deaths) > 0:
-			death = deaths[0]
+		connect_with_death()
 	
 	if death:
 		var distance_to_death = global_position.distance_to(death.global_position)
@@ -118,9 +123,7 @@ func play_and_schedule_heartbeat():
 func update_vignette():
 	var vignette_scale = 0
 	if not death:
-		var deaths = get_tree().get_nodes_in_group("death")
-		if len(deaths) > 0:
-			death = deaths[0]
+		connect_with_death()
 	
 	if death:
 		var distance_to_death = global_position.distance_to(death.global_position)

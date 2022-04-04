@@ -75,7 +75,7 @@ func _change_visibility():
 	if $Tween.is_active():
 		$Tween.remove_all()
 	if player.has_psychedelics:
-		$Tween.interpolate_property(self, "modulate", modulate, Color(1,1,1,0.03), 1.5)
+		$Tween.interpolate_property(self, "modulate", modulate, Color(1,1,1,.06), 1.5)
 		$Tween.start()
 	else:
 		$Tween.interpolate_property(self, "modulate", modulate, Color(1,1,1,0), 1.5)
