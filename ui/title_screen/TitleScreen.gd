@@ -8,6 +8,6 @@ func _ready() -> void:
 #		button.connect("pressed", self, "_on_menu_button_pressed", [button.next_scene])
 
 
-func _on_NewGameButton_button_up() -> void:
-	Globals._play('light-off')
-	Globals._play('level-light-hum')
+#func _on_NewGameButton_button_up() -> void:
+#	Globals._play('light-off')
+#	Globals._play('level-light-hum')

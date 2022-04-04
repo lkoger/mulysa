@@ -78,7 +78,7 @@ func _change_visibility():
 
 func _on_Death_body_entered(body):
 	if body.has_method("die"):
-		Globals._stop_death_sound('scythe_scraping')
+		Globals._stop_death_sound()
 		body.die()
 
 func _on_Player_died():
