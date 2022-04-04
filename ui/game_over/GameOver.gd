@@ -16,3 +16,6 @@ func activate():
 func deactivate():
 	active = false
 	modulate = Color(1,1,1,0)
+
+func set_vals():
+	pass
