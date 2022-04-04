@@ -5,6 +5,7 @@ var speed := 50.0
 var state = "right"
 var path := PoolVector2Array()
 var player = null
+var active = true
 
 export (NodePath) var nav_tree_path = null
 onready var nav_node : Navigation2D = get_node(nav_tree_path)
@@ -21,27 +22,28 @@ func _get_distance_to_player_and_prepare_it():
 	return clamp(maths, 0, 30)
 
 func _process(delta):
-	path = nav_node.get_simple_path(self.position, player.position)
-	# Calculate the movement distance for this frame
-	var distance_to_walk = speed * delta
-	
-	# Change the volume of the scythe scraping based on distance to the player
-	Globals._change_death_sound_volume(_get_distance_to_player_and_prepare_it())
-	
-	# Move the player along the path until he has run out of movement or the path ends.
-	while distance_to_walk > 0 and path.size() > 0:
-		var distance_to_next_point = position.distance_to(path[0])
-		if distance_to_walk <= distance_to_next_point:
-			# The player does not have enough movement left to get to the next point.
-			var direction = position.direction_to(path[0])
-			chage_state_based_on_direction(direction)
-			position += direction * distance_to_walk
-		else:
-			# The player get to the next point
-			position = path[0]
-			path.remove(0)
-		# Update the distance to walk
-		distance_to_walk -= distance_to_next_point
+	if active:
+		path = nav_node.get_simple_path(self.position, player.position)
+		# Calculate the movement distance for this frame
+		var distance_to_walk = speed * delta
+		
+		# Change the volume of the scythe scraping based on distance to the player
+		Globals._change_death_sound_volume(_get_distance_to_player_and_prepare_it())
+		
+		# Move the player along the path until he has run out of movement or the path ends.
+		while distance_to_walk > 0 and path.size() > 0:
+			var distance_to_next_point = position.distance_to(path[0])
+			if distance_to_walk <= distance_to_next_point:
+				# The player does not have enough movement left to get to the next point.
+				var direction = position.direction_to(path[0])
+				chage_state_based_on_direction(direction)
+				position += direction * distance_to_walk
+			else:
+				# The player get to the next point
+				position = path[0]
+				path.remove(0)
+			# Update the distance to walk
+			distance_to_walk -= distance_to_next_point
 
 func _physics_process(_delta):
 	pass
@@ -67,7 +69,7 @@ func _change_state(new_state):
 
 func _change_visibility():
 	if $Tween.is_active():
-		$Tween.stop_all()
+		$Tween.remove_all()
 	if player.has_psychedelics:
 		$Tween.interpolate_property(self, "modulate", modulate, Color(1,1,1,0.1), 1.5)
 		$Tween.start()
@@ -81,18 +83,22 @@ func _on_Death_body_entered(body):
 		body.die()
 
 func _on_Player_died():
+	active = false
+	print("here")
 	_change_state("idle")
-	set_process(false)
 	# Make visible on player death
 	if $Tween.is_active():
-		$Tween.stop_all()
+		$Tween.remove_all()
+	#modulate = Color(1,1,1,1)
 	$Tween.interpolate_property(self, "modulate", modulate, Color(1,1,1,1), 1.0)
 	$Tween.start()
 
 
 func _on_Player_take_psychedelic():
-	_change_visibility()
+	if active:
+		_change_visibility()
 
 
 func _on_Player_psychadelic_wears_off():
-	_change_visibility()
+	if active:
+		_change_visibility()

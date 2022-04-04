@@ -30,7 +30,7 @@ tile_data = PoolIntArray( -655359, 0, 65541, -655355, 0, 65541, -524294, 0, 7, -
 position = Vector2( 192, -272 )
 
 [node name="Death" parent="." instance=ExtResource( 3 )]
-position = Vector2( -64, -512 )
+position = Vector2( 272, -288 )
 nav_tree_path = NodePath("../Navigation2D")
 
 [node name="Camera2D" type="Camera2D" parent="Death"]
@@ -113,167 +113,126 @@ position = Vector2( 920, 88 )
 [node name="lights" type="Node2D" parent="."]
 
 [node name="Light2D" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 192, -256 )
 
 [node name="Light2D21" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 352, -544 )
 
 [node name="Light2D35" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 640, -544 )
 
 [node name="Light2D36" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 992, -544 )
 
 [node name="Light2D37" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 1344, -544 )
 
 [node name="Light2D38" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 1440, -344 )
 
 [node name="Light2D39" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 1440, 288 )
 
 [node name="Light2D40" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 1344, 480 )
 
 [node name="Light2D41" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 992, 480 )
 
 [node name="Light2D42" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 640, 480 )
 
 [node name="Light2D43" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 352, 480 )
 
 [node name="Light2D22" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 96, -544 )
 
 [node name="Light2D23" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( -96, -536 )
 
 [node name="Light2D24" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( -320, -512 )
 
 [node name="Light2D25" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( -352, -288 )
 
 [node name="Light2D26" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( -320, -32 )
 
 [node name="Light2D27" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( -64, -32 )
 
 [node name="Light2D28" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( -352, 224 )
 
 [node name="Light2D29" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( -320, 448 )
 
 [node name="Light2D30" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( -64, 448 )
 
 [node name="Light2D31" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 224, 0 )
 
 [node name="Light2D32" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 480, -32 )
 
 [node name="Light2D33" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 992, -32 )
 
 [node name="Light2D34" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 1440, -32 )
 
 [node name="Light2D4" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 192, 256 )
 
 [node name="Light2D5" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 1024, -384 )
 
 [node name="Light2D6" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 704, -184 )
 
 [node name="Light2D7" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 736, -384 )
 
 [node name="Light2D8" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 896, -192 )
 
 [node name="Light2D9" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 1088, -384 )
 
 [node name="Light2D10" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 1280, -384 )
 
 [node name="Light2D11" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 1280, -192 )
 
 [node name="Light2D12" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 1088, -192 )
 
 [node name="Light2D13" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 704, 128 )
 
 [node name="Light2D14" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 704, 320 )
 
 [node name="Light2D15" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 896, 128 )
 
 [node name="Light2D16" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 896, 320 )
 
 [node name="Light2D17" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 1088, 128 )
 
 [node name="Light2D18" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 1280, 128 )
 
 [node name="Light2D19" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 1280, 320 )
 
 [node name="Light2D20" parent="lights" instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 1088, 320 )
 
 [connection signal="died" from="Player" to="Death" method="_on_Player_died"]
