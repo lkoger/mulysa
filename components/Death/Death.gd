@@ -21,6 +21,7 @@ func _get_distance_to_player_and_prepare_it():
 	return clamp(maths, 0, 30)
 
 func _process(delta):
+	print(global_position.distance_to(player.global_position))
 	path = nav_node.get_simple_path(self.position, player.position)
 	# Calculate the movement distance for this frame
 	var distance_to_walk = speed * delta
@@ -66,7 +67,8 @@ func _change_state(new_state):
 		$AnimatedSprite.play(state)
 
 func _change_visibility():
-	$Tween.stop_all()
+	if $Tween.is_active():
+		$Tween.stop_all()
 	if player.has_psychedelics:
 		$Tween.interpolate_property(self, "modulate", modulate, Color(1,1,1,0.1), 1.5)
 		$Tween.start()
@@ -83,7 +85,8 @@ func _on_Player_died():
 	_change_state("idle")
 	set_process(false)
 	# Make visible on player death
-	$Tween.stop_all()
+	if $Tween.is_active():
+		$Tween.stop_all()
 	$Tween.interpolate_property(self, "modulate", modulate, Color(1,1,1,1), 1.0)
 	$Tween.start()
 
