@@ -15,7 +15,8 @@ func _on_Area2D_area_entered(area):
 
 func _on_Area2D_area_exited(area):
 	if area.name == "Death":
-		$Tween.stop_all()
+		if $Tween.is_active():
+			$Tween.remove_all()
 		$Tween.interpolate_property(self, "energy", energy, 1.0, 3.0, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		$Tween.start()
 	elif area.name == "LightActivationArea":

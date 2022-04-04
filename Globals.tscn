@@ -11,3 +11,5 @@ volume_db = -10.0
 [node name="Tween" type="Tween" parent="."]
 
 [node name="DeathsSound" type="AudioStreamPlayer2D" parent="."]
+
+[node name="sounds" type="Node2D" parent="."]

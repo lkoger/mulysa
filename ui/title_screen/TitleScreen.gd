@@ -5,6 +5,7 @@ var frame_2 = preload("res://assets/0001.jpg")
 var frame_3 = preload("res://assets/0002.jpg")
 
 func _ready() -> void:
+	Globals.clear_all_audio()
 	Globals._play('light-on')
 	Globals._play('title-light-hum')
 	

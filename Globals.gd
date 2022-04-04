@@ -125,11 +125,13 @@ func _play(sound):
 		'heartbeat':
 			audio = heartbeat_sounds[randi() % heartbeat_sounds.size()]
 	var sound_obj = sound_direct.instance()
-	add_child(sound_obj)
+	$sounds.add_child(sound_obj)
 	sound_obj.play_sound(audio, volume)
 
 
-
+func clear_all_audio():
+	for child in $sounds.get_children():
+		child.queue_free()
 
 func get_song_time_left():
 	if $AudioStreamPlayer.playing:
