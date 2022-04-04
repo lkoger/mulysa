@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/light.png-87539b10c4b4cebc046b6b91ffea6f69.stex"
+path="res://.import/pillarCaps.png-680c290f6fbe43e2e70d394f83309ece.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/light.png"
-dest_files=[ "res://.import/light.png-87539b10c4b4cebc046b6b91ffea6f69.stex" ]
+source_file="res://assets/walls/pillarCaps.png"
+dest_files=[ "res://.import/pillarCaps.png-680c290f6fbe43e2e70d394f83309ece.stex" ]
 
 [params]
 
