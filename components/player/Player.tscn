@@ -25,6 +25,10 @@ region = Rect2( 0, 0, 16, 32 )
 atlas = ExtResource( 2 )
 region = Rect2( 16, 0, 16, 32 )
 
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 3 )
+region = Rect2( 336, 0, 24, 32 )
+
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 3 )
 region = Rect2( 240, 0, 24, 32 )
@@ -32,14 +36,6 @@ region = Rect2( 240, 0, 24, 32 )
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 3 )
 region = Rect2( 264, 0, 24, 32 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 2 )
-region = Rect2( 32, 0, 16, 32 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 2 )
-region = Rect2( 48, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 3 )
@@ -49,9 +45,13 @@ region = Rect2( 192, 0, 24, 32 )
 atlas = ExtResource( 3 )
 region = Rect2( 216, 0, 24, 32 )
 
-[sub_resource type="AtlasTexture" id=17]
-atlas = ExtResource( 3 )
-region = Rect2( 336, 0, 24, 32 )
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 32, 0, 16, 32 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 48, 0, 16, 32 )
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -70,14 +70,14 @@ animations = [ {
 "name": "side",
 "speed": 3.0
 }, {
+"frames": [ SubResource( 17 ) ],
+"loop": true,
+"name": "dead",
+"speed": 3.0
+}, {
 "frames": [ SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
 "name": "down-side",
-"speed": 3.0
-}, {
-"frames": [ SubResource( 7 ), SubResource( 8 ) ],
-"loop": true,
-"name": "down",
 "speed": 3.0
 }, {
 "frames": [ SubResource( 15 ), SubResource( 16 ) ],
@@ -85,9 +85,9 @@ animations = [ {
 "name": "up-side",
 "speed": 3.0
 }, {
-"frames": [ SubResource( 17 ) ],
+"frames": [ SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
-"name": "dead",
+"name": "down",
 "speed": 3.0
 } ]
 
@@ -119,5 +119,10 @@ wait_time = 0.3
 one_shot = true
 autostart = true
 
+[node name="LifetimeTimer" type="Timer" parent="."]
+process_mode = 0
+autostart = true
+
 [connection signal="died" from="." to="UI" method="game_over"]
 [connection signal="timeout" from="HeartTimer" to="." method="play_and_schedule_heartbeat"]
+[connection signal="timeout" from="LifetimeTimer" to="." method="_on_LifetimeTimer_timeout"]

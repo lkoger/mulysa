@@ -45,7 +45,7 @@ var death_current_sound = ''
 
 var time_alive_score = 0.0
 var adrenaline_taken = 0
-var psychedelic_taken = 0
+var psychedelics_taken = 0
 
 var default_sfx_volume = 0.0
 var played_light_on_already = false
@@ -145,13 +145,17 @@ func fade_out_music(time_to_fade):
 		$Tween.interpolate_property($AudioStreamPlayer, "volume_db", 0.0, -50.0, time_to_fade)
 		$Tween.start()
 
+func clear_score():
+	time_alive_score = 0.0
+	adrenaline_taken = 0
+	psychedelics_taken = 0
 
-func set_time_score(time):
-	time_alive_score = time
+func increment_time_score():
+	time_alive_score += 1.0
 
 func increment_adrenaline():
 	adrenaline_taken += 1
 
 func increment_psychedelics():
-	psychedelic_taken += 1
+	psychedelics_taken += 1
 

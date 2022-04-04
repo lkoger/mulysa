@@ -9,6 +9,7 @@ var flipped = false
 var dead = false
 
 onready var camera : Camera2D = get_node("Camera2D")
+onready var lifetime : Timer = get_node("LifetimeTimer")
 
 var death = null
 
@@ -32,6 +33,7 @@ signal psychadelic_wears_off
 signal take_adrenaline
 
 func _ready():
+	Globals.clear_score()
 	adrenaline_progress.animation = "injecting"
 	psychedelics_progress.animation = "consuming"
 
@@ -166,12 +168,14 @@ func handle_psychedelic(item):
 	Globals._play('usePsychedelic')
 	psychedelics_timer += item_lifetime
 	has_psychedelics = true
+	Globals.increment_psychedelics()
 	emit_signal("take_psychedelic")
 
 func handle_adrenaline(item):
 	Globals._play('useAdrenaline')
 	adrenaline_timer += item_lifetime
 	has_adrenaline = true
+	Globals.increment_adrenaline()
 	emit_signal("take_adrenaline")
 
 func die():
@@ -183,6 +187,9 @@ func die():
 	Globals._stop_single_play()
 	emit_signal("died")
 	_change_state('dead')
+	
+	
+	
 	dead = true
 
 func print_info():
@@ -192,3 +199,7 @@ func print_info():
 func _on_HeartTimer_timeout():
 	print("here")
 	Globals._play("heartbeat")
+
+
+func _on_LifetimeTimer_timeout():
+	Globals.increment_time_score()
