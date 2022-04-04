@@ -50,7 +50,6 @@ script = ExtResource( 10 )
 layer = 2
 
 [node name="Control" type="Control" parent="CanvasLayer"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
@@ -203,7 +202,7 @@ position = Vector2( -85, 434 )
 
 [node name="TV" parent="furniture" instance=ExtResource( 27 )]
 position = Vector2( -901, 76 )
-frame = 2
+frame = 12
 
 [node name="Locker" parent="furniture" instance=ExtResource( 22 )]
 position = Vector2( -813, 89 )
@@ -277,7 +276,7 @@ position = Vector2( -986, 660 )
 
 [node name="TV2" parent="furniture" instance=ExtResource( 27 )]
 position = Vector2( -82, 75 )
-frame = 0
+frame = 10
 
 [node name="PinkChair2" parent="furniture" instance=ExtResource( 18 )]
 position = Vector2( 35, 573 )
@@ -297,7 +296,7 @@ position = Vector2( -59, 577 )
 
 [node name="TV3" parent="furniture" instance=ExtResource( 27 )]
 position = Vector2( 41, 412 )
-frame = 10
+frame = 7
 
 [node name="Table" parent="furniture" instance=ExtResource( 17 )]
 position = Vector2( -761, 272 )
@@ -476,9 +475,6 @@ position = Vector2( 0, 1 )
 [node name="Sprite42" type="Sprite" parent="furniture"]
 position = Vector2( 26, -501 )
 texture = ExtResource( 34 )
-
-[node name="Interactable2" parent="furniture/Sprite42" instance=ExtResource( 42 )]
-position = Vector2( 481, 72 )
 
 [node name="Sprite17" type="Sprite" parent="furniture"]
 position = Vector2( -531, -338 )
@@ -674,7 +670,7 @@ position = Vector2( -371, 374 )
 
 [node name="TV4" parent="furniture" instance=ExtResource( 27 )]
 position = Vector2( -495, 367 )
-frame = 10
+frame = 7
 
 [node name="BlueChair6" parent="furniture" instance=ExtResource( 30 )]
 position = Vector2( -585, 94 )
