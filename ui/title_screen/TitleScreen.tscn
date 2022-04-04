@@ -74,7 +74,7 @@ margin_right = 1120.0
 margin_bottom = 150.0
 rect_min_size = Vector2( 1024, 150 )
 custom_fonts/font = SubResource( 2 )
-text = "Speedy McWheels"
+text = "Mulysa"
 align = 1
 valign = 1
 

@@ -202,7 +202,7 @@ position = Vector2( -85, 434 )
 
 [node name="TV" parent="furniture" instance=ExtResource( 27 )]
 position = Vector2( -901, 76 )
-frame = 3
+frame = 1
 
 [node name="Locker" parent="furniture" instance=ExtResource( 22 )]
 position = Vector2( -813, 89 )
@@ -276,7 +276,7 @@ position = Vector2( -986, 660 )
 
 [node name="TV2" parent="furniture" instance=ExtResource( 27 )]
 position = Vector2( -82, 75 )
-frame = 1
+frame = 12
 
 [node name="PinkChair2" parent="furniture" instance=ExtResource( 18 )]
 position = Vector2( 35, 573 )
@@ -296,7 +296,6 @@ position = Vector2( -59, 577 )
 
 [node name="TV3" parent="furniture" instance=ExtResource( 27 )]
 position = Vector2( 41, 412 )
-frame = 11
 
 [node name="Table" parent="furniture" instance=ExtResource( 17 )]
 position = Vector2( -761, 272 )
@@ -670,7 +669,6 @@ position = Vector2( -371, 374 )
 
 [node name="TV4" parent="furniture" instance=ExtResource( 27 )]
 position = Vector2( -495, 367 )
-frame = 11
 
 [node name="BlueChair6" parent="furniture" instance=ExtResource( 30 )]
 position = Vector2( -585, 94 )
