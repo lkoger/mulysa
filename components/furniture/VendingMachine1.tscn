@@ -20,3 +20,4 @@ shape = SubResource( 1 )
 
 [node name="Interactable" parent="interactables" instance=ExtResource( 2 )]
 position = Vector2( 0, 18 )
+just_adrenaline = true

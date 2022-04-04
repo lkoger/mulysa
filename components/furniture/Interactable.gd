@@ -2,25 +2,32 @@ extends Area2D
 
 var adrenaline_scene = preload("res://components/items/adrenaline/Adrenaline.tscn")
 var psychedelic_scene = preload("res://components/items/psychedelic/Psychedelic.tscn")
+export var just_adrenaline = false
 
 var full = false
 
 func _ready():
-	$Timer.wait_time = (randf() * 10.0) + 5.0
-	$Timer.start()
+	start_timer()
 
 func _process(_delta):
 	pass
 
+func start_timer():
+	$Timer.wait_time = (randf() * 10.0) + 5.0
+	$Timer.start()
+
 func _on_Timer_timeout():
-	var i = randi() % 6
-	if i == 0 or i == 1:
-		$items.add_child(adrenaline_scene.instance())
-	elif i == 2:
-		$items.add_child(psychedelic_scene.instance())
+	# 1 in 3 change of spawning an item
+	var i = randi() % 3
+	if i == 0:
+		i = randi() % 3
+		# 2 in 3 chance of having adrenaline
+		if just_adrenaline or i == 0 or i == 1:
+			$items.add_child(adrenaline_scene.instance())
+		elif i == 2:
+			$items.add_child(psychedelic_scene.instance())
 	else:
-		$Timer.wait_time = (randf() * 10.0) + 5.0
-		$Timer.start()
+		start_timer()
 		return
 	full = true
 	$Position2D/Notification.visible = true
@@ -41,8 +48,7 @@ func _on_Cabinet_body_entered(body):
 		else:
 			_display_item_aquired($Position2D/Pill)
 		Globals._play('clink')
-		$Timer.wait_time = (randf() * 10.0) + 5.0
-		$Timer.start()
+		start_timer()
 		
 
 func _display_item_aquired(item):
