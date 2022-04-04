@@ -185,8 +185,7 @@ margin_top = 383.0
 margin_right = 270.0
 margin_bottom = 541.0
 custom_fonts/font = SubResource( 4 )
-text = "All things UI and sound design. Also created the Itch.io page.
-
+text = "All things UI and sound design. Created the title screen scene and animation
 
 Game Jam snack:
 Goldfish and Milo's tea"
