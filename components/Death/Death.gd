@@ -14,7 +14,7 @@ func _ready():
 	player = get_tree().get_nodes_in_group("player")[0]
 	Globals._play_death_sound()
 	modulate = Color(1,1,1,0)
-	$Timer.wait_time = 60
+	$Timer.wait_time = 30
 	$Timer.start()
 	
 func _get_distance_to_player_and_prepare_it():
@@ -108,5 +108,5 @@ func _on_Player_psychadelic_wears_off():
 func _on_Timer_timeout():
 	if speed < 100:
 		speed += 5
-		$Timer.wait_time = 60
+		$Timer.wait_time = 30
 		$Timer.start()
