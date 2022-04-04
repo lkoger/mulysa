@@ -123,7 +123,7 @@ func _play(sound):
 			volume = -5
 			audio = old_man_scream
 		'heartbeat':
-			audio = heartbeat
+			audio = heartbeat_sounds[randi() % heartbeat_sounds.size()]
 	var sound_obj = sound_direct.instance()
 	add_child(sound_obj)
 	sound_obj.play_sound(audio, volume)
