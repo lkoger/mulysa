@@ -4,7 +4,7 @@
 [ext_resource path="res://components/player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://components/Death/Death.tscn" type="PackedScene" id=3]
 [ext_resource path="res://components/lights/BasicLight.tscn" type="PackedScene" id=5]
-[ext_resource path="res://components/furniture/Cabinet.tscn" type="PackedScene" id=6]
+[ext_resource path="res://components/furniture/Interactable.tscn" type="PackedScene" id=6]
 
 [node name="tilemap_level" type="Node2D"]
 

@@ -1,19 +1,18 @@
-[gd_scene load_steps=78 format=2]
+[gd_scene load_steps=77 format=2]
 
-[ext_resource path="res://components/DoorDown.tscn" type="PackedScene" id=1]
-[ext_resource path="res://components/DoorLeft.tscn" type="PackedScene" id=2]
-[ext_resource path="res://components/furniture/Cabinet.tscn" type="PackedScene" id=3]
-[ext_resource path="res://components/player/Player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://components/DoorRight.tscn" type="PackedScene" id=5]
-[ext_resource path="res://components/DoorUp.tscn" type="PackedScene" id=6]
-[ext_resource path="res://components/Death/Death.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/floors/all-floors-Sheet.png" type="Texture" id=8]
-[ext_resource path="res://assets/walls/specialwallL.png" type="Texture" id=9]
-[ext_resource path="res://assets/walls/pillarCaps.png" type="Texture" id=10]
-[ext_resource path="res://assets/walls/newwall.png" type="Texture" id=11]
-[ext_resource path="res://assets/walls/all-walls.png" type="Texture" id=12]
-[ext_resource path="res://assets/walls/pillar.png" type="Texture" id=13]
-[ext_resource path="res://assets/walls/specialwall.png" type="Texture" id=14]
+[ext_resource path="res://components/Death/Death.tscn" type="PackedScene" id=1]
+[ext_resource path="res://components/DoorDown.tscn" type="PackedScene" id=2]
+[ext_resource path="res://components/DoorLeft.tscn" type="PackedScene" id=3]
+[ext_resource path="res://components/DoorUp.tscn" type="PackedScene" id=4]
+[ext_resource path="res://components/player/Player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://components/DoorRight.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/floors/all-floors-Sheet.png" type="Texture" id=7]
+[ext_resource path="res://assets/walls/specialwallL.png" type="Texture" id=8]
+[ext_resource path="res://assets/walls/pillarCaps.png" type="Texture" id=9]
+[ext_resource path="res://assets/walls/newwall.png" type="Texture" id=10]
+[ext_resource path="res://assets/walls/all-walls.png" type="Texture" id=11]
+[ext_resource path="res://assets/walls/pillar.png" type="Texture" id=12]
+[ext_resource path="res://assets/walls/specialwall.png" type="Texture" id=13]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -77,7 +76,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 
 [sub_resource type="TileSet" id=17]
 0/name = "all-floors-Sheet.png 0"
-0/texture = ExtResource( 8 )
+0/texture = ExtResource( 7 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 80, 0, 16, 16 )
@@ -92,7 +91,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 0/shapes = [  ]
 0/z_index = 0
 1/name = "all-floors-Sheet.png 1"
-1/texture = ExtResource( 8 )
+1/texture = ExtResource( 7 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 80, 16, 16, 16 )
@@ -107,7 +106,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 1/shapes = [  ]
 1/z_index = 0
 2/name = "all-floors-Sheet.png 2"
-2/texture = ExtResource( 8 )
+2/texture = ExtResource( 7 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 64, 0, 16, 16 )
@@ -122,7 +121,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 2/shapes = [  ]
 2/z_index = 0
 3/name = "all-floors-Sheet.png 3"
-3/texture = ExtResource( 8 )
+3/texture = ExtResource( 7 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 64, 16, 16, 16 )
@@ -137,7 +136,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 3/shapes = [  ]
 3/z_index = 0
 4/name = "all-floors-Sheet.png 4"
-4/texture = ExtResource( 8 )
+4/texture = ExtResource( 7 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 48, 0, 16, 16 )
@@ -152,7 +151,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 4/shapes = [  ]
 4/z_index = 0
 5/name = "all-floors-Sheet.png 5"
-5/texture = ExtResource( 8 )
+5/texture = ExtResource( 7 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 48, 16, 16, 16 )
@@ -167,7 +166,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 5/shapes = [  ]
 5/z_index = 0
 6/name = "all-floors-Sheet.png 6"
-6/texture = ExtResource( 8 )
+6/texture = ExtResource( 7 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 32, 0, 16, 16 )
@@ -182,7 +181,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 6/shapes = [  ]
 6/z_index = 0
 7/name = "all-floors-Sheet.png 7"
-7/texture = ExtResource( 8 )
+7/texture = ExtResource( 7 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 32, 16, 16, 16 )
@@ -197,7 +196,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 7/shapes = [  ]
 7/z_index = 0
 8/name = "all-floors-Sheet.png 8"
-8/texture = ExtResource( 8 )
+8/texture = ExtResource( 7 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 16, 0, 16, 16 )
@@ -212,7 +211,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 8/shapes = [  ]
 8/z_index = 0
 9/name = "all-floors-Sheet.png 9"
-9/texture = ExtResource( 8 )
+9/texture = ExtResource( 7 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 16, 16, 16, 16 )
@@ -227,7 +226,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 9/shapes = [  ]
 9/z_index = 0
 10/name = "all-floors-Sheet.png 10"
-10/texture = ExtResource( 8 )
+10/texture = ExtResource( 7 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
 10/region = Rect2( 0, 0, 16, 16 )
@@ -242,7 +241,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 10/shapes = [  ]
 10/z_index = 0
 11/name = "all-floors-Sheet.png 11"
-11/texture = ExtResource( 8 )
+11/texture = ExtResource( 7 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 0, 16, 16, 16 )
@@ -257,7 +256,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 11/shapes = [  ]
 11/z_index = 0
 12/name = "all-floors-Sheet.png 12"
-12/texture = ExtResource( 8 )
+12/texture = ExtResource( 7 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
 12/region = Rect2( 32, 32, 16, 16 )
@@ -272,7 +271,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 12/shapes = [  ]
 12/z_index = 0
 13/name = "all-floors-Sheet.png 13"
-13/texture = ExtResource( 8 )
+13/texture = ExtResource( 7 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
 13/region = Rect2( 16, 32, 16, 16 )
@@ -287,7 +286,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 13/shapes = [  ]
 13/z_index = 0
 14/name = "all-floors-Sheet.png 14"
-14/texture = ExtResource( 8 )
+14/texture = ExtResource( 7 )
 14/tex_offset = Vector2( 0, 0 )
 14/modulate = Color( 1, 1, 1, 1 )
 14/region = Rect2( 0, 32, 16, 16 )
@@ -403,7 +402,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 
 [sub_resource type="TileSet" id=36]
 0/name = "all-walls.png 0"
-0/texture = ExtResource( 12 )
+0/texture = ExtResource( 11 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 16, 32 )
@@ -424,7 +423,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 0/z_index = 0
 1/name = "all-walls.png 1"
-1/texture = ExtResource( 12 )
+1/texture = ExtResource( 11 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 16, 0, 16, 32 )
@@ -445,7 +444,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 1/z_index = 0
 2/name = "all-walls.png 2"
-2/texture = ExtResource( 12 )
+2/texture = ExtResource( 11 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 32, 0, 16, 32 )
@@ -466,7 +465,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 2/z_index = 0
 3/name = "all-walls.png 3"
-3/texture = ExtResource( 12 )
+3/texture = ExtResource( 11 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 48, 0, 16, 32 )
@@ -487,7 +486,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 3/z_index = 0
 4/name = "all-walls.png 4"
-4/texture = ExtResource( 12 )
+4/texture = ExtResource( 11 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 64, 0, 16, 32 )
@@ -508,7 +507,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 4/z_index = 0
 5/name = "all-walls.png 5"
-5/texture = ExtResource( 12 )
+5/texture = ExtResource( 11 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 80, 0, 16, 32 )
@@ -529,7 +528,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 5/z_index = 0
 6/name = "all-walls.png 6"
-6/texture = ExtResource( 12 )
+6/texture = ExtResource( 11 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 96, 0, 16, 32 )
@@ -550,7 +549,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 6/z_index = 0
 7/name = "all-walls.png 7"
-7/texture = ExtResource( 12 )
+7/texture = ExtResource( 11 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 112, 0, 16, 32 )
@@ -571,7 +570,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 7/z_index = 0
 8/name = "all-walls.png 8"
-8/texture = ExtResource( 12 )
+8/texture = ExtResource( 11 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 128, 0, 16, 32 )
@@ -592,7 +591,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 8/z_index = 0
 9/name = "all-walls.png 9"
-9/texture = ExtResource( 12 )
+9/texture = ExtResource( 11 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 0, 32, 16, 32 )
@@ -613,7 +612,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 9/z_index = 0
 10/name = "all-walls.png 10"
-10/texture = ExtResource( 12 )
+10/texture = ExtResource( 11 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
 10/region = Rect2( 16, 32, 16, 32 )
@@ -634,7 +633,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 10/z_index = 0
 11/name = "all-walls.png 11"
-11/texture = ExtResource( 12 )
+11/texture = ExtResource( 11 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 32, 32, 16, 32 )
@@ -655,7 +654,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 11/z_index = 0
 12/name = "all-walls.png 12"
-12/texture = ExtResource( 12 )
+12/texture = ExtResource( 11 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
 12/region = Rect2( 48, 32, 16, 32 )
@@ -676,7 +675,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 12/z_index = 0
 13/name = "all-walls.png 13"
-13/texture = ExtResource( 12 )
+13/texture = ExtResource( 11 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
 13/region = Rect2( 64, 32, 16, 32 )
@@ -697,7 +696,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 13/z_index = 0
 14/name = "all-walls.png 14"
-14/texture = ExtResource( 12 )
+14/texture = ExtResource( 11 )
 14/tex_offset = Vector2( 0, 0 )
 14/modulate = Color( 1, 1, 1, 1 )
 14/region = Rect2( 80, 32, 16, 32 )
@@ -718,7 +717,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 14/z_index = 0
 15/name = "all-walls.png 15"
-15/texture = ExtResource( 12 )
+15/texture = ExtResource( 11 )
 15/tex_offset = Vector2( 0, 0 )
 15/modulate = Color( 1, 1, 1, 1 )
 15/region = Rect2( 96, 32, 16, 32 )
@@ -739,7 +738,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 15/z_index = 0
 16/name = "all-walls.png 16"
-16/texture = ExtResource( 12 )
+16/texture = ExtResource( 11 )
 16/tex_offset = Vector2( 0, 0 )
 16/modulate = Color( 1, 1, 1, 1 )
 16/region = Rect2( 112, 32, 16, 32 )
@@ -760,7 +759,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 16/z_index = 0
 17/name = "all-walls.png 17"
-17/texture = ExtResource( 12 )
+17/texture = ExtResource( 11 )
 17/tex_offset = Vector2( 0, 0 )
 17/modulate = Color( 1, 1, 1, 1 )
 17/region = Rect2( 128, 32, 16, 32 )
@@ -781,7 +780,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 17/z_index = 0
 18/name = "all-walls.png 18"
-18/texture = ExtResource( 12 )
+18/texture = ExtResource( 11 )
 18/tex_offset = Vector2( 0, 0 )
 18/modulate = Color( 1, 1, 1, 1 )
 18/region = Rect2( 0, 64, 16, 32 )
@@ -802,7 +801,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 18/z_index = 0
 19/name = "all-walls.png 19"
-19/texture = ExtResource( 12 )
+19/texture = ExtResource( 11 )
 19/tex_offset = Vector2( 0, 0 )
 19/modulate = Color( 1, 1, 1, 1 )
 19/region = Rect2( 16, 64, 16, 32 )
@@ -823,7 +822,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 19/z_index = 0
 20/name = "all-walls.png 20"
-20/texture = ExtResource( 12 )
+20/texture = ExtResource( 11 )
 20/tex_offset = Vector2( 0, 0 )
 20/modulate = Color( 1, 1, 1, 1 )
 20/region = Rect2( 32, 64, 16, 32 )
@@ -844,7 +843,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 20/z_index = 0
 21/name = "all-walls.png 21"
-21/texture = ExtResource( 12 )
+21/texture = ExtResource( 11 )
 21/tex_offset = Vector2( 0, 0 )
 21/modulate = Color( 1, 1, 1, 1 )
 21/region = Rect2( 48, 64, 16, 32 )
@@ -865,7 +864,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 21/z_index = 0
 22/name = "all-walls.png 22"
-22/texture = ExtResource( 12 )
+22/texture = ExtResource( 11 )
 22/tex_offset = Vector2( 0, 0 )
 22/modulate = Color( 1, 1, 1, 1 )
 22/region = Rect2( 64, 64, 16, 32 )
@@ -886,7 +885,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 22/z_index = 0
 23/name = "all-walls.png 23"
-23/texture = ExtResource( 12 )
+23/texture = ExtResource( 11 )
 23/tex_offset = Vector2( 0, 0 )
 23/modulate = Color( 1, 1, 1, 1 )
 23/region = Rect2( 80, 64, 16, 32 )
@@ -907,7 +906,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 23/z_index = 0
 24/name = "all-walls.png 24"
-24/texture = ExtResource( 12 )
+24/texture = ExtResource( 11 )
 24/tex_offset = Vector2( 0, 0 )
 24/modulate = Color( 1, 1, 1, 1 )
 24/region = Rect2( 96, 64, 16, 32 )
@@ -928,7 +927,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 24/z_index = 0
 25/name = "all-walls.png 25"
-25/texture = ExtResource( 12 )
+25/texture = ExtResource( 11 )
 25/tex_offset = Vector2( 0, 0 )
 25/modulate = Color( 1, 1, 1, 1 )
 25/region = Rect2( 112, 64, 16, 32 )
@@ -949,7 +948,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 25/z_index = 0
 26/name = "all-walls.png 26"
-26/texture = ExtResource( 12 )
+26/texture = ExtResource( 11 )
 26/tex_offset = Vector2( 0, 0 )
 26/modulate = Color( 1, 1, 1, 1 )
 26/region = Rect2( 128, 64, 16, 32 )
@@ -970,7 +969,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 26/z_index = 0
 27/name = "all-walls.png 27"
-27/texture = ExtResource( 12 )
+27/texture = ExtResource( 11 )
 27/tex_offset = Vector2( 0, 0 )
 27/modulate = Color( 1, 1, 1, 1 )
 27/region = Rect2( 0, 0, 16, 32 )
@@ -991,7 +990,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 27/z_index = 0
 28/name = "all-walls.png 28"
-28/texture = ExtResource( 12 )
+28/texture = ExtResource( 11 )
 28/tex_offset = Vector2( 0, 0 )
 28/modulate = Color( 1, 1, 1, 1 )
 28/region = Rect2( 32, 0, 16, 32 )
@@ -1012,7 +1011,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 28/z_index = 0
 29/name = "pillar.png 29"
-29/texture = ExtResource( 13 )
+29/texture = ExtResource( 12 )
 29/tex_offset = Vector2( 0, 0 )
 29/modulate = Color( 1, 1, 1, 1 )
 29/region = Rect2( 0, 0, 16, 32 )
@@ -1033,7 +1032,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 29/z_index = 0
 30/name = "pillar.png 30"
-30/texture = ExtResource( 13 )
+30/texture = ExtResource( 12 )
 30/tex_offset = Vector2( 0, 0 )
 30/modulate = Color( 1, 1, 1, 1 )
 30/region = Rect2( 16, 0, 16, 32 )
@@ -1054,7 +1053,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 30/z_index = 0
 31/name = "pillar.png 31"
-31/texture = ExtResource( 13 )
+31/texture = ExtResource( 12 )
 31/tex_offset = Vector2( 0, 0 )
 31/modulate = Color( 1, 1, 1, 1 )
 31/region = Rect2( 0, 32, 16, 32 )
@@ -1075,7 +1074,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 31/z_index = 0
 32/name = "pillar.png 32"
-32/texture = ExtResource( 13 )
+32/texture = ExtResource( 12 )
 32/tex_offset = Vector2( 0, 0 )
 32/modulate = Color( 1, 1, 1, 1 )
 32/region = Rect2( 16, 32, 16, 32 )
@@ -1096,7 +1095,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 } ]
 32/z_index = 0
 33/name = "specialwallL.png 33"
-33/texture = ExtResource( 9 )
+33/texture = ExtResource( 8 )
 33/tex_offset = Vector2( 0, 0 )
 33/modulate = Color( 1, 1, 1, 1 )
 33/region = Rect2( 0, 0, 16, 32 )
@@ -1110,7 +1109,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 32, 0, 32 )
 33/shapes = [  ]
 33/z_index = 0
 34/name = "specialwall.png 34"
-34/texture = ExtResource( 14 )
+34/texture = ExtResource( 13 )
 34/tex_offset = Vector2( 0, 0 )
 34/modulate = Color( 1, 1, 1, 1 )
 34/region = Rect2( 0, 0, 16, 32 )
@@ -1162,7 +1161,7 @@ points = PoolVector2Array( 0, 13.5529, 15.5877, 13.5529, 15.5877, 32, 0, 32 )
 
 [sub_resource type="TileSet" id=57]
 0/name = "pillarCaps.png 0"
-0/texture = ExtResource( 10 )
+0/texture = ExtResource( 9 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 16, 32 )
@@ -1183,7 +1182,7 @@ points = PoolVector2Array( 0, 13.5529, 15.5877, 13.5529, 15.5877, 32, 0, 32 )
 } ]
 0/z_index = 0
 1/name = "pillarCaps.png 1"
-1/texture = ExtResource( 10 )
+1/texture = ExtResource( 9 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 16, 0, 16, 32 )
@@ -1204,7 +1203,7 @@ points = PoolVector2Array( 0, 13.5529, 15.5877, 13.5529, 15.5877, 32, 0, 32 )
 } ]
 1/z_index = 0
 2/name = "pillarCaps.png 2"
-2/texture = ExtResource( 10 )
+2/texture = ExtResource( 9 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 32, 0, 16, 32 )
@@ -1225,7 +1224,7 @@ points = PoolVector2Array( 0, 13.5529, 15.5877, 13.5529, 15.5877, 32, 0, 32 )
 } ]
 2/z_index = 0
 3/name = "pillarCaps.png 3"
-3/texture = ExtResource( 10 )
+3/texture = ExtResource( 9 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 48, 0, 16, 32 )
@@ -1246,7 +1245,7 @@ points = PoolVector2Array( 0, 13.5529, 15.5877, 13.5529, 15.5877, 32, 0, 32 )
 } ]
 3/z_index = 0
 4/name = "pillarCaps.png 4"
-4/texture = ExtResource( 10 )
+4/texture = ExtResource( 9 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 0, 32, 16, 32 )
@@ -1267,7 +1266,7 @@ points = PoolVector2Array( 0, 13.5529, 15.5877, 13.5529, 15.5877, 32, 0, 32 )
 } ]
 4/z_index = 0
 5/name = "pillarCaps.png 5"
-5/texture = ExtResource( 10 )
+5/texture = ExtResource( 9 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 16, 32, 16, 32 )
@@ -1288,7 +1287,7 @@ points = PoolVector2Array( 0, 13.5529, 15.5877, 13.5529, 15.5877, 32, 0, 32 )
 } ]
 5/z_index = 0
 6/name = "pillarCaps.png 6"
-6/texture = ExtResource( 10 )
+6/texture = ExtResource( 9 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 32, 32, 16, 32 )
@@ -1309,7 +1308,7 @@ points = PoolVector2Array( 0, 13.5529, 15.5877, 13.5529, 15.5877, 32, 0, 32 )
 } ]
 6/z_index = 0
 7/name = "pillarCaps.png 7"
-7/texture = ExtResource( 10 )
+7/texture = ExtResource( 9 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 48, 32, 16, 32 )
@@ -1330,7 +1329,7 @@ points = PoolVector2Array( 0, 13.5529, 15.5877, 13.5529, 15.5877, 32, 0, 32 )
 } ]
 7/z_index = 0
 8/name = "newwall.png 8"
-8/texture = ExtResource( 11 )
+8/texture = ExtResource( 10 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 0, 0, 16, 32 )
@@ -1351,7 +1350,7 @@ points = PoolVector2Array( 0, 13.5529, 15.5877, 13.5529, 15.5877, 32, 0, 32 )
 } ]
 8/z_index = 0
 9/name = "newwall.png 9"
-9/texture = ExtResource( 11 )
+9/texture = ExtResource( 10 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 16, 0, 16, 32 )
@@ -1372,7 +1371,7 @@ points = PoolVector2Array( 0, 13.5529, 15.5877, 13.5529, 15.5877, 32, 0, 32 )
 } ]
 9/z_index = 0
 10/name = "newwall.png 10"
-10/texture = ExtResource( 11 )
+10/texture = ExtResource( 10 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
 10/region = Rect2( 32, 0, 16, 32 )
@@ -1393,7 +1392,7 @@ points = PoolVector2Array( 0, 13.5529, 15.5877, 13.5529, 15.5877, 32, 0, 32 )
 } ]
 10/z_index = 0
 11/name = "newwall.png 11"
-11/texture = ExtResource( 11 )
+11/texture = ExtResource( 10 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 48, 0, 16, 32 )
@@ -1456,135 +1455,103 @@ tile_data = PoolIntArray( -852018, 2, 0, -852017, 6, 0, -852016, 6, 0, -852015, 
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Player" parent="." instance=ExtResource( 4 )]
+[node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( -24, 0 )
 
-[node name="Death" parent="." instance=ExtResource( 7 )]
+[node name="Death" parent="." instance=ExtResource( 1 )]
 position = Vector2( -64, -512 )
 nav_tree_path = NodePath("../Navigation2D")
 
 [node name="Camera2D" type="Camera2D" parent="Death"]
 zoom = Vector2( 0.4, 0.4 )
 
-[node name="Door" parent="." instance=ExtResource( 6 )]
+[node name="doors" type="Node2D" parent="."]
+
+[node name="Door" parent="doors" instance=ExtResource( 4 )]
 position = Vector2( 683, 151 )
 z_index = 1
 
-[node name="Door7" parent="." instance=ExtResource( 6 )]
+[node name="Door7" parent="doors" instance=ExtResource( 4 )]
 position = Vector2( -445, 390 )
 z_index = 1
 
-[node name="Door19" parent="." instance=ExtResource( 6 )]
+[node name="Door19" parent="doors" instance=ExtResource( 4 )]
 position = Vector2( -1045, 5 )
 z_index = 1
 
-[node name="Door2" parent="." instance=ExtResource( 1 )]
+[node name="Door2" parent="doors" instance=ExtResource( 2 )]
 position = Vector2( -12, 106 )
 z_index = 2
 
-[node name="Door12" parent="." instance=ExtResource( 1 )]
+[node name="Door12" parent="doors" instance=ExtResource( 2 )]
 position = Vector2( 611, 155 )
 z_index = 2
 
-[node name="Door15" parent="." instance=ExtResource( 1 )]
+[node name="Door15" parent="doors" instance=ExtResource( 2 )]
 position = Vector2( 780, 824 )
 z_index = 2
 
-[node name="Door13" parent="." instance=ExtResource( 1 )]
+[node name="Door13" parent="doors" instance=ExtResource( 2 )]
 position = Vector2( 612, 59 )
 z_index = 2
 
-[node name="Door11" parent="." instance=ExtResource( 1 )]
+[node name="Door11" parent="doors" instance=ExtResource( 2 )]
 position = Vector2( -85, -38 )
 z_index = 2
 
-[node name="Door18" parent="." instance=ExtResource( 1 )]
+[node name="Door18" parent="doors" instance=ExtResource( 2 )]
 position = Vector2( 323, -40 )
 z_index = 2
 
-[node name="Door8" parent="." instance=ExtResource( 1 )]
+[node name="Door8" parent="doors" instance=ExtResource( 2 )]
 position = Vector2( -877, 393 )
 z_index = 2
 
-[node name="Door17" parent="." instance=ExtResource( 1 )]
+[node name="Door17" parent="doors" instance=ExtResource( 2 )]
 position = Vector2( -493, 107 )
 z_index = 2
 
-[node name="Door3" parent="." instance=ExtResource( 5 )]
+[node name="Door3" parent="doors" instance=ExtResource( 6 )]
 position = Vector2( 185, 204 )
 z_index = 2
 
-[node name="Door10" parent="." instance=ExtResource( 5 )]
+[node name="Door10" parent="doors" instance=ExtResource( 6 )]
 position = Vector2( 740, 252 )
 z_index = 2
 
-[node name="Door6" parent="." instance=ExtResource( 5 )]
+[node name="Door6" parent="doors" instance=ExtResource( 6 )]
 position = Vector2( -675, 490 )
 z_index = 2
 
-[node name="Door9" parent="." instance=ExtResource( 5 )]
+[node name="Door9" parent="doors" instance=ExtResource( 6 )]
 position = Vector2( -291, 587 )
 z_index = 2
 
-[node name="Door20" parent="." instance=ExtResource( 5 )]
+[node name="Door20" parent="doors" instance=ExtResource( 6 )]
 position = Vector2( -700, -517 )
 z_index = 2
 
-[node name="Door4" parent="." instance=ExtResource( 2 )]
+[node name="Door4" parent="doors" instance=ExtResource( 3 )]
 position = Vector2( -283, 204 )
 z_index = 3
 
-[node name="Door16" parent="." instance=ExtResource( 2 )]
+[node name="Door16" parent="doors" instance=ExtResource( 3 )]
 position = Vector2( -286, 733 )
 z_index = 3
 
-[node name="Door14" parent="." instance=ExtResource( 2 )]
+[node name="Door14" parent="doors" instance=ExtResource( 3 )]
 position = Vector2( 196, 637 )
 z_index = 3
 
-[node name="Door5" parent="." instance=ExtResource( 2 )]
+[node name="Door5" parent="doors" instance=ExtResource( 3 )]
 position = Vector2( -669, 204 )
 z_index = 3
 
-[node name="Door21" parent="." instance=ExtResource( 2 )]
+[node name="Door21" parent="doors" instance=ExtResource( 3 )]
 position = Vector2( -1052, -324 )
 z_index = 3
 
-[node name="Cabinet" parent="." instance=ExtResource( 3 )]
-position = Vector2( -150, 90 )
-
-[node name="Cabinet2" parent="." instance=ExtResource( 3 )]
-position = Vector2( -13, 432 )
-
-[node name="Cabinet3" parent="." instance=ExtResource( 3 )]
-position = Vector2( -105, 574 )
-
-[node name="Cabinet4" parent="." instance=ExtResource( 3 )]
-position = Vector2( -574, 383 )
-
-[node name="Cabinet5" parent="." instance=ExtResource( 3 )]
-position = Vector2( -767, 95 )
-
-[node name="Cabinet9" parent="." instance=ExtResource( 3 )]
-position = Vector2( -996, -434 )
-
-[node name="Cabinet10" parent="." instance=ExtResource( 3 )]
-position = Vector2( -739, -437 )
-
-[node name="Cabinet6" parent="." instance=ExtResource( 3 )]
-position = Vector2( 477, 473 )
-
-[node name="Cabinet7" parent="." instance=ExtResource( 3 )]
-position = Vector2( 269, 334 )
-
-[node name="Cabinet8" parent="." instance=ExtResource( 3 )]
-position = Vector2( -1019, 666 )
-
-[node name="Cabinet11" parent="." instance=ExtResource( 3 )]
-position = Vector2( -361, -570 )
-
-[node name="Cabinet12" parent="." instance=ExtResource( 3 )]
-position = Vector2( 557, -579 )
+[node name="furniture" type="Node2D" parent="."]
 
 [connection signal="died" from="Player" to="Death" method="_on_Player_died"]
 [connection signal="psychadelic_wears_off" from="Player" to="Death" method="_on_Player_psychadelic_wears_off"]
