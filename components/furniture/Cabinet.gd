@@ -2,10 +2,14 @@ extends Area2D
 
 var adrenaline_scene = preload("res://components/items/adrenaline/Adrenaline.tscn")
 var psychedelic_scene = preload("res://components/items/psychedelic/Psychedelic.tscn")
+export (Texture) var sprite
+
 
 var full = false
 
 func _ready():
+	if sprite != null:
+		$Sprite.texture = sprite
 	$Timer.wait_time = (randf() * 10.0) + 5.0
 	$Timer.start()
 
