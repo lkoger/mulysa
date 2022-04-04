@@ -25,16 +25,20 @@ var gulp_01: AudioStream = preload("res://assets/sound/UseItem/gulp.wav")
 var get_pills: AudioStream = preload("res://assets/sound/UseItem/getpills.wav")
 var tv_static: AudioStream = preload("res://assets/sound/Environmental/tv-static.wav")
 var old_man_scream: AudioStream = preload("res://assets/sound/Death/old-man-scream.wav")
+var heartbeat_01: AudioStream = preload("res://assets/sound/Environmental/heartbeat-01.wav")
+var heartbeat_02: AudioStream = preload("res://assets/sound/Environmental/heartbeat-02.wav")
 
 
 #var clink_sounds = [clink_01, clink_02, clink_03]
 var hover_sounds = [hover_01, hover_02, hover_03]
 var wheelchair_sounds = [wheelchair_01, wheelchair_02]
 var grunt_sounds = [grunt_01, grunt_02, grunt_03]
+var heartbeat_sounds = [heartbeat_01, heartbeat_02]
 var clink: AudioStream
 var hover: AudioStream
 var wheelchair: AudioStream
 var grunt: AudioStream
+var heartbeat: AudioStream
 
 var current_sound = ''
 var death_current_sound = ''
@@ -116,6 +120,8 @@ func _play(sound):
 		'old-man-scream':
 			volume = -5
 			audio = old_man_scream
+		'heartbeat':
+			audio = heartbeat
 	var sound_obj = sound_direct.instance()
 	add_child(sound_obj)
 	sound_obj.play_sound(audio, volume)
