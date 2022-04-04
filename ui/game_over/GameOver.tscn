@@ -7,7 +7,7 @@
 [ext_resource path="res://ui/other_assets/Hospital.ttf" type="DynamicFontData" id=6]
 
 [sub_resource type="DynamicFont" id=1]
-size = 80
+size = 100
 font_data = ExtResource( 6 )
 
 [node name="GameOver" type="Control"]
@@ -15,6 +15,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 2 )
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="FilmGrain" type="TextureRect" parent="."]
 modulate = Color( 1, 1, 1, 0.0980392 )
@@ -22,90 +25,78 @@ margin_right = 1280.0
 margin_bottom = 720.0
 texture = ExtResource( 4 )
 stretch_mode = 1
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-margin_right = 1280.0
-margin_bottom = 720.0
-custom_constants/separation = 66
-alignment = 1
-
-[node name="header" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 177.0
-margin_right = 1280.0
-margin_bottom = 257.0
-alignment = 1
-
-[node name="You Died" type="Label" parent="MarginContainer/VBoxContainer/header"]
-margin_left = 462.0
-margin_right = 818.0
-margin_bottom = 80.0
-custom_fonts/font = SubResource( 1 )
-text = "You Died"
-align = 1
-
-[node name="middle" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 323.0
-margin_right = 1280.0
-margin_bottom = 427.0
-alignment = 1
-
-[node name="labels" type="VBoxContainer" parent="MarginContainer/VBoxContainer/middle"]
-margin_left = 399.0
-margin_right = 876.0
-margin_bottom = 104.0
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/middle/labels"]
-margin_right = 477.0
-margin_bottom = 50.0
+[node name="Label" type="Label" parent="."]
+margin_left = 88.0
+margin_top = 224.0
+margin_right = 609.0
+margin_bottom = 274.0
 text = "You Lasted:"
+align = 2
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer/middle/labels"]
-margin_top = 54.0
-margin_right = 477.0
-margin_bottom = 104.0
+[node name="Label2" type="Label" parent="."]
+margin_left = 88.0
+margin_top = 272.0
+margin_right = 609.0
+margin_bottom = 322.0
 text = "Adrenaline Taken:"
+align = 2
 
-[node name="stats" type="VBoxContainer" parent="MarginContainer/VBoxContainer/middle"]
-margin_left = 880.0
-margin_right = 880.0
-margin_bottom = 104.0
-alignment = 1
+[node name="Label3" type="Label" parent="."]
+margin_left = 88.0
+margin_top = 320.0
+margin_right = 609.0
+margin_bottom = 370.0
+text = "psychedelics Taken:"
+align = 2
 
-[node name="footer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 493.0
-margin_right = 1280.0
-margin_bottom = 543.0
-alignment = 1
+[node name="Time" type="Label" parent="."]
+margin_left = 704.0
+margin_top = 224.0
+margin_right = 976.0
+margin_bottom = 274.0
+text = "0 minutes"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/footer"]
-margin_right = 638.0
-margin_bottom = 50.0
-size_flags_horizontal = 3
-alignment = 1
+[node name="Adrenaline" type="Label" parent="."]
+margin_left = 704.0
+margin_top = 280.0
+margin_right = 976.0
+margin_bottom = 330.0
+text = "0 Syringes"
 
-[node name="PlayAgainButton" parent="MarginContainer/VBoxContainer/footer/HBoxContainer" instance=ExtResource( 1 )]
-margin_left = 179.0
-margin_right = 459.0
-margin_bottom = 50.0
+[node name="Psychadelics" type="Label" parent="."]
+margin_left = 704.0
+margin_top = 336.0
+margin_right = 976.0
+margin_bottom = 386.0
+text = "0 Bottles"
+
+[node name="MainMenuButton" parent="." instance=ExtResource( 1 )]
+margin_left = 664.0
+margin_top = 512.0
+margin_right = 931.0
+margin_bottom = 562.0
+text = "Main Menu"
+flat = true
+next_scene = "res://ui/title_screen/TitleScreen.tscn"
+
+[node name="PlayAgainButton" parent="." instance=ExtResource( 1 )]
+margin_left = 320.0
+margin_top = 512.0
+margin_right = 600.0
+margin_bottom = 562.0
 text = "Play Again"
 flat = true
 next_scene = "res://scenes/hospital/Hospital.tscn"
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/footer"]
-margin_left = 642.0
-margin_right = 1280.0
-margin_bottom = 50.0
-size_flags_horizontal = 3
-alignment = 1
-
-[node name="MainMenuButton" parent="MarginContainer/VBoxContainer/footer/HBoxContainer2" instance=ExtResource( 1 )]
-margin_left = 185.0
-margin_right = 452.0
-margin_bottom = 50.0
-text = "Main Menu"
-flat = true
-next_scene = "res://ui/title_screen/TitleScreen.tscn"
+[node name="You Died" type="Label" parent="."]
+margin_left = 416.0
+margin_top = 104.0
+margin_right = 863.0
+margin_bottom = 204.0
+custom_fonts/font = SubResource( 1 )
+text = "You Died"
+align = 1
