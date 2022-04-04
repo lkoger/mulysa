@@ -18,18 +18,28 @@ margin_bottom = 720.0
 texture = ExtResource( 4 )
 stretch_mode = 1
 
-[node name="PlayAgainButton" parent="." instance=ExtResource( 1 )]
-margin_left = 496.0
-margin_top = 296.0
-margin_right = 776.0
-margin_bottom = 346.0
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_right = 1280.0
+margin_bottom = 720.0
+custom_constants/separation = 66
+alignment = 1
+
+[node name="PlayAgainButton" parent="MarginContainer/VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 277.0
+margin_right = 1280.0
+margin_bottom = 327.0
 text = "Play Again"
+flat = true
 next_scene = "res://scenes/test_level/tilemap_level.tscn"
 
-[node name="MainMenuButton" parent="." instance=ExtResource( 1 )]
-margin_left = 496.0
-margin_top = 368.0
-margin_right = 776.0
-margin_bottom = 418.0
+[node name="MainMenuButton" parent="MarginContainer/VBoxContainer" instance=ExtResource( 1 )]
+margin_top = 393.0
+margin_right = 1280.0
+margin_bottom = 443.0
 text = "Main Menu"
+flat = true
 next_scene = "res://ui/title_screen/TitleScreen.tscn"
