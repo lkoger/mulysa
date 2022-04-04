@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=2]
+[gd_scene load_steps=107 format=2]
 
 [ext_resource path="res://components/Death/Death.tscn" type="PackedScene" id=1]
 [ext_resource path="res://components/DoorDown.tscn" type="PackedScene" id=2]
@@ -42,6 +42,7 @@
 [ext_resource path="res://assets/misc/plant3.png" type="Texture" id=40]
 [ext_resource path="res://assets/misc/hanginthere.png" type="Texture" id=41]
 [ext_resource path="res://components/furniture/Interactable.tscn" type="PackedScene" id=42]
+[ext_resource path="res://components/lights/BasicLight.tscn" type="PackedScene" id=43]
 
 [sub_resource type="NavigationPolygon" id=1]
 vertices = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -1453,8 +1454,7 @@ margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
-color = Color( 0.439216, 0.447059, 0.501961, 1 )
+color = Color( 0.247059, 0.254902, 0.286275, 1 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
@@ -1486,7 +1486,7 @@ tile_data = PoolIntArray( -852018, 2, 0, -852017, 6, 0, -852016, 6, 0, -852015, 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( -710, 209 )
+position = Vector2( 13, -224 )
 
 [node name="Death" parent="." instance=ExtResource( 1 )]
 position = Vector2( -64, -512 )
@@ -1607,16 +1607,19 @@ position = Vector2( -85, 434 )
 
 [node name="TV" parent="furniture" instance=ExtResource( 27 )]
 position = Vector2( -901, 76 )
-frame = 8
+frame = 3
 
 [node name="Locker" parent="furniture" instance=ExtResource( 22 )]
-position = Vector2( -798, 89 )
+position = Vector2( -813, 89 )
 
 [node name="Locker2" parent="furniture" instance=ExtResource( 22 )]
-position = Vector2( -775, 89 )
+position = Vector2( -770, 89 )
 
-[node name="Locker3" parent="furniture" instance=ExtResource( 22 )]
-position = Vector2( -752, 89 )
+[node name="Locker12" parent="furniture" instance=ExtResource( 22 )]
+position = Vector2( -813, 103 )
+
+[node name="Locker13" parent="furniture" instance=ExtResource( 22 )]
+position = Vector2( -770, 103 )
 
 [node name="VendingMachine1" parent="furniture" instance=ExtResource( 28 )]
 position = Vector2( -721, 83 )
@@ -1678,7 +1681,7 @@ position = Vector2( -986, 660 )
 
 [node name="TV2" parent="furniture" instance=ExtResource( 27 )]
 position = Vector2( -82, 75 )
-frame = 6
+frame = 1
 
 [node name="PinkChair2" parent="furniture" instance=ExtResource( 18 )]
 position = Vector2( 35, 573 )
@@ -1698,7 +1701,7 @@ position = Vector2( -59, 577 )
 
 [node name="TV3" parent="furniture" instance=ExtResource( 27 )]
 position = Vector2( 41, 412 )
-frame = 3
+frame = 11
 
 [node name="Table" parent="furniture" instance=ExtResource( 17 )]
 position = Vector2( -761, 272 )
@@ -2054,7 +2057,7 @@ position = Vector2( -371, 374 )
 
 [node name="TV4" parent="furniture" instance=ExtResource( 27 )]
 position = Vector2( -495, 367 )
-frame = 3
+frame = 11
 
 [node name="BlueChair6" parent="furniture" instance=ExtResource( 30 )]
 position = Vector2( -585, 94 )
@@ -2148,6 +2151,217 @@ position = Vector2( -571, 379 )
 
 [node name="VendingMachine7" parent="furniture" instance=ExtResource( 28 )]
 position = Vector2( -848, -12 )
+
+[node name="lights" type="Node2D" parent="."]
+visible = false
+
+[node name="Light2D" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -65, 1.90735e-06 )
+scale = Vector2( 0.345215, 0.320801 )
+
+[node name="Light2D16" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -53, 156 )
+scale = Vector2( 0.345215, 0.320801 )
+
+[node name="Light2D22" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -464, 205 )
+scale = Vector2( 0.345215, 0.320801 )
+
+[node name="Light2D23" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -855, 218 )
+scale = Vector2( 0.763366, 0.63092 )
+
+[node name="Light2D24" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -858, 498 )
+scale = Vector2( 0.763366, 0.63092 )
+
+[node name="Light2D25" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -478, 499 )
+scale = Vector2( 0.763366, 0.63092 )
+
+[node name="Light2D17" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -51, 315 )
+scale = Vector2( 0.345215, 0.320801 )
+
+[node name="Light2D26" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( 33, 482 )
+scale = Vector2( 0.260498, 0.267822 )
+
+[node name="Light2D27" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -86, 482 )
+scale = Vector2( 0.260498, 0.267822 )
+
+[node name="Light2D28" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( 32.675, 624.425 )
+scale = Vector2( 0.260498, 0.267822 )
+
+[node name="Light2D29" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -86.325, 624.425 )
+scale = Vector2( 0.260498, 0.267822 )
+
+[node name="Light2D31" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( 311, 213 )
+scale = Vector2( 0.380859, 0.360596 )
+
+[node name="Light2D51" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( 466, 536 )
+scale = Vector2( 0.380859, 0.360596 )
+
+[node name="Light2D32" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( 321, -124 )
+scale = Vector2( 0.260498, 0.267822 )
+
+[node name="Light2D43" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -278, 1.99999 )
+scale = Vector2( 0.260498, 0.267822 )
+
+[node name="Light2D44" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -824, 20 )
+scale = Vector2( 0.260498, 0.267822 )
+
+[node name="Light2D49" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -870, -105 )
+scale = Vector2( 0.260498, 0.267822 )
+
+[node name="Light2D50" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -1001, -323 )
+scale = Vector2( 0.260498, 0.267822 )
+
+[node name="Light2D40" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( 615, -524 )
+scale = Vector2( 0.260498, 0.267822 )
+
+[node name="Light2D41" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( 715, -522 )
+scale = Vector2( 0.260498, 0.267822 )
+
+[node name="Light2D34" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -755, -524 )
+scale = Vector2( 0.260498, 0.267822 )
+
+[node name="Light2D42" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -1088, -534 )
+scale = Vector2( 0.260498, 0.267822 )
+
+[node name="Light2D45" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -855, -411 )
+scale = Vector2( 0.260498, 0.267822 )
+
+[node name="Light2D46" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -750, -211 )
+scale = Vector2( 0.260498, 0.267822 )
+
+[node name="Light2D35" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -1043, 32 )
+scale = Vector2( 0.260498, 0.267822 )
+
+[node name="Light2D36" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -1105, 356 )
+scale = Vector2( 0.260498, 0.267822 )
+
+[node name="Light2D37" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -998, 704 )
+scale = Vector2( 0.260498, 0.267822 )
+
+[node name="Light2D38" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -227, 727 )
+scale = Vector2( 0.260498, 0.267822 )
+
+[node name="Light2D39" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( 252, 633 )
+scale = Vector2( 0.260498, 0.267822 )
+
+[node name="Light2D52" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( 776, 258 )
+scale = Vector2( 0.260498, 0.267822 )
+
+[node name="Light2D33" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( 611, -24 )
+scale = Vector2( 0.260498, 0.267822 )
+
+[node name="Light2D18" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( 123, 207 )
+scale = Vector2( 0.206787, 0.1604 )
+
+[node name="Light2D19" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -231, 206 )
+scale = Vector2( 0.206787, 0.1604 )
+
+[node name="Light2D21" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -603, 204 )
+scale = Vector2( 0.206787, 0.1604 )
+
+[node name="Light2D20" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -351, 585 )
+scale = Vector2( 0.206787, 0.1604 )
+
+[node name="Light2D47" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -721, 495 )
+scale = Vector2( 0.206787, 0.1604 )
+
+[node name="Light2D48" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -877, 334 )
+scale = Vector2( 0.206787, 0.1604 )
+
+[node name="Light2D2" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -107, -295 )
+scale = Vector2( 0.476929, 0.37561 )
+
+[node name="Light2D3" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( 63, -295 )
+scale = Vector2( 0.476929, 0.37561 )
+
+[node name="Light2D4" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( 230, -295 )
+scale = Vector2( 0.476929, 0.37561 )
+
+[node name="Light2D5" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( 394, -295 )
+scale = Vector2( 0.476929, 0.37561 )
+
+[node name="Light2D6" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( 563, -298 )
+scale = Vector2( 0.476929, 0.37561 )
+
+[node name="Light2D7" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -283, -295 )
+scale = Vector2( 0.476929, 0.37561 )
+
+[node name="Light2D8" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -445, -295 )
+scale = Vector2( 0.476929, 0.37561 )
+
+[node name="Light2D30" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -582, -150 )
+scale = Vector2( 0.476929, 0.37561 )
+
+[node name="Light2D9" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -240.163, -484.538 )
+scale = Vector2( 0.476929, 0.37561 )
+
+[node name="Light2D10" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -70.1625, -484.538 )
+scale = Vector2( 0.476929, 0.37561 )
+
+[node name="Light2D11" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( 96.8375, -484.538 )
+scale = Vector2( 0.476929, 0.37561 )
+
+[node name="Light2D12" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( 260.838, -484.538 )
+scale = Vector2( 0.476929, 0.37561 )
+
+[node name="Light2D13" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( 429.837, -487.538 )
+scale = Vector2( 0.476929, 0.37561 )
+
+[node name="Light2D14" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -416.163, -484.538 )
+scale = Vector2( 0.476929, 0.37561 )
+
+[node name="Light2D15" parent="lights" instance=ExtResource( 43 )]
+position = Vector2( -578.162, -484.538 )
+scale = Vector2( 0.476929, 0.37561 )
 
 [connection signal="died" from="Player" to="Death" method="_on_Player_died"]
 [connection signal="psychadelic_wears_off" from="Player" to="Death" method="_on_Player_psychadelic_wears_off"]

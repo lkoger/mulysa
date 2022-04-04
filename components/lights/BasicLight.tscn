@@ -6,11 +6,11 @@
 load_path = "res://.import/light.png-87539b10c4b4cebc046b6b91ffea6f69.stex"
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 150.0
+radius = 232.138
 
 [node name="Light2D" type="Light2D"]
 texture = SubResource( 4 )
-texture_scale = 0.2
+texture_scale = 0.4
 color = Color( 1, 0.898039, 0.717647, 1 )
 energy = 0.6
 shadow_enabled = true
