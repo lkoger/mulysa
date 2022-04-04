@@ -148,6 +148,9 @@ func update_adrenaline_progress():
 		emit_signal("take_adrenaline")
 
 func _change_state(new_state):
+	if new_state == "idle":
+		$AnimatedSprite.playing = false
+		return
 	if new_state != state:
 		state = new_state
 		$AnimatedSprite.play(state)
