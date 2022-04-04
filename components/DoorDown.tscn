@@ -44,7 +44,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 15, 2 )
+extents = Vector2( 15, 1.99891 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15, 2 )
@@ -55,7 +55,7 @@ collision_mask = 6
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 0, -32 )
+position = Vector2( -1, -32 )
 scale = Vector2( 1.88, 1.88 )
 frames = SubResource( 10 )
 
@@ -65,13 +65,14 @@ collision_layer = 16
 collision_mask = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -1.08336e-05, -3.77571 )
 rotation = 3.14159
 shape = SubResource( 11 )
 one_way_collision = true
 one_way_collision_margin = 10.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.000742348, 0.999999 )
+position = Vector2( 0, -8 )
 shape = SubResource( 1 )
 one_way_collision = true
 one_way_collision_margin = 10.0
