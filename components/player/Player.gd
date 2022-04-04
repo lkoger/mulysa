@@ -6,6 +6,7 @@ var speed := 45.0
 var acceleration := 0.2
 var state = "idle-forward"
 var flipped = false
+var dead = false
 
 onready var camera : Camera2D = get_node("Camera2D")
 
@@ -85,6 +86,26 @@ func _physics_process(_delta):
 	update_vignette()
 	velocity = move_and_slide(velocity)
 
+func play_and_schedule_heartbeat():
+	if dead:
+		return
+	
+	Globals._play("heartbeat")
+	
+	var heart_rate = 1.2
+	if not death:
+		var deaths = get_tree().get_nodes_in_group("death")
+		if len(deaths) > 0:
+			death = deaths[0]
+	
+	if death:
+		var distance_to_death = global_position.distance_to(death.global_position)
+		distance_to_death = min(300, distance_to_death)
+		heart_rate = 1.2 - (1.0 - (distance_to_death / 300.0)) * 1.19
+	$HeartTimer.wait_time = heart_rate
+	$HeartTimer.start()
+	
+
 func update_vignette():
 	var vignette_scale = 0
 	if not death:
@@ -152,7 +173,12 @@ func die():
 	Globals._stop_single_play()
 	emit_signal("died")
 	_change_state('dead')
+	dead = true
 
 func print_info():
 	print(adrenaline_timer)
 	print(psychedelics_timer)
+
+func _on_HeartTimer_timeout():
+	print("here")
+	Globals._play("heartbeat")

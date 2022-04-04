@@ -21,7 +21,6 @@ func _get_distance_to_player_and_prepare_it():
 	return clamp(maths, 0, 30)
 
 func _process(delta):
-	print(global_position.distance_to(player.global_position))
 	path = nav_node.get_simple_path(self.position, player.position)
 	# Calculate the movement distance for this frame
 	var distance_to_walk = speed * delta
