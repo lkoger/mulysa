@@ -1,6 +1,5 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=43 format=2]
 
-[ext_resource path="res://components/Death/Death.tscn" type="PackedScene" id=1]
 [ext_resource path="res://components/DoorDown.tscn" type="PackedScene" id=2]
 [ext_resource path="res://components/DoorLeft.tscn" type="PackedScene" id=3]
 [ext_resource path="res://components/DoorUp.tscn" type="PackedScene" id=4]
@@ -91,10 +90,6 @@ position = Vector2( 616, 80 )
 
 [node name="Position2D9" type="Position2D" parent="death_spawns"]
 position = Vector2( -1104, 368 )
-
-[node name="Death" parent="." instance=ExtResource( 1 )]
-position = Vector2( -64, -512 )
-nav_tree_path = NodePath("../Navigation2D")
 
 [node name="doors" type="Node2D" parent="."]
 
@@ -208,7 +203,7 @@ position = Vector2( -85, 434 )
 
 [node name="TV" parent="furniture" instance=ExtResource( 27 )]
 position = Vector2( -901, 76 )
-frame = 6
+frame = 2
 
 [node name="Locker" parent="furniture" instance=ExtResource( 22 )]
 position = Vector2( -813, 89 )
@@ -282,7 +277,7 @@ position = Vector2( -986, 660 )
 
 [node name="TV2" parent="furniture" instance=ExtResource( 27 )]
 position = Vector2( -82, 75 )
-frame = 4
+frame = 0
 
 [node name="PinkChair2" parent="furniture" instance=ExtResource( 18 )]
 position = Vector2( 35, 573 )
@@ -302,7 +297,7 @@ position = Vector2( -59, 577 )
 
 [node name="TV3" parent="furniture" instance=ExtResource( 27 )]
 position = Vector2( 41, 412 )
-frame = 1
+frame = 10
 
 [node name="Table" parent="furniture" instance=ExtResource( 17 )]
 position = Vector2( -761, 272 )
@@ -679,7 +674,7 @@ position = Vector2( -371, 374 )
 
 [node name="TV4" parent="furniture" instance=ExtResource( 27 )]
 position = Vector2( -495, 367 )
-frame = 1
+frame = 10
 
 [node name="BlueChair6" parent="furniture" instance=ExtResource( 30 )]
 position = Vector2( -585, 94 )
@@ -1164,7 +1159,3 @@ scale = Vector2( 0.476929, 0.37561 )
 [node name="Light2D15" parent="lights" instance=ExtResource( 43 )]
 position = Vector2( -578.162, -484.538 )
 scale = Vector2( 0.476929, 0.37561 )
-
-[connection signal="died" from="Player" to="Death" method="_on_Player_died"]
-[connection signal="psychadelic_wears_off" from="Player" to="Death" method="_on_Player_psychadelic_wears_off"]
-[connection signal="take_psychedelic" from="Player" to="Death" method="_on_Player_take_psychedelic"]
