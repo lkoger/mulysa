@@ -66,9 +66,9 @@ func _process(_delta):
 		print_info()
 		
 	if not 'idle' in new_state:
-		Globals._single_play('wheelchair')
+		Globals._single_play()
 	else:
-		Globals._stop_single_play('wheelchair')
+		Globals._stop_single_play()
 	
 	_change_state(new_state)
 	$AnimatedSprite.flip_h = flipped
@@ -149,7 +149,7 @@ func die():
 	set_physics_process(false)
 	set_process(false)
 	Globals._play('old-man-scream')
-	Globals._stop_single_play('wheelchair')
+	Globals._stop_single_play()
 	emit_signal("died")
 	_change_state('dead')
 

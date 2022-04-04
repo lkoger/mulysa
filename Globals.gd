@@ -47,9 +47,7 @@ var time_alive_score = 0
 var rounds_alive_score = 0
 
 var default_sfx_volume = 0.0
-#var death_sound_max_volume = 30
-#var death_sound_min_volume = death_sound_max_volume - 30
-
+var played_light_on_already = false
 
 
 
@@ -65,20 +63,20 @@ func _play_death_sound():
 func _change_death_sound_volume(value):
 	$DeathsSound.set_volume_db(value)
 		
-func _stop_death_sound(sound):
+func _stop_death_sound():
 	death_current_sound = ''
 	$DeathsSound.stop()
 	_play('light-off')
 
 
-func _single_play(sound):
+func _single_play():
 	if current_sound != 'wheelchair':
 		current_sound = 'wheelchair'
 		$AudioStreamPlayer.set_volume_db(default_sfx_volume)
 		$AudioStreamPlayer.set_stream(wheelchair_sounds[randi() % wheelchair_sounds.size()])
 		$AudioStreamPlayer.play()
 
-func _stop_single_play(sound):
+func _stop_single_play():
 	current_sound = ''
 	$AudioStreamPlayer.stop()
 
@@ -106,6 +104,10 @@ func _play(sound):
 		'door-close':
 			audio = door_close
 		'light-on':
+			if played_light_on_already:
+				return
+			else:
+				played_light_on_already = true
 			audio = light_on
 		'light-off':
 			audio = light_off
