@@ -24,6 +24,7 @@ var pill_max_effect = 20 * 60
 
 var item_lifetime = 10 * 60 # 60 fps time 10 should mean approximately 10 seconds.
 
+onready var heart_animation: AnimatedSprite = get_node("UI/UIArea/HeartAnimatedSprite")
 
 signal died
 signal take_psychedelic
@@ -88,11 +89,14 @@ func _physics_process(_delta):
 
 func play_and_schedule_heartbeat():
 	if dead:
+		heart_animation.frame = 0
+		heart_animation.playing = false
 		return
 	
 	Globals._play("heartbeat")
 	
 	var heart_rate = 1.2
+	var heart_animation_rate = 1.0
 	if not death:
 		var deaths = get_tree().get_nodes_in_group("death")
 		if len(deaths) > 0:
@@ -102,8 +106,11 @@ func play_and_schedule_heartbeat():
 		var distance_to_death = global_position.distance_to(death.global_position)
 		distance_to_death = min(300, distance_to_death)
 		heart_rate = 1.2 - (1.0 - (distance_to_death / 300.0)) * 1.19
+		heart_animation_rate = 1.0 + ((1.0 - (distance_to_death / 300.0)) * 2.0)
+	
 	$HeartTimer.wait_time = heart_rate
 	$HeartTimer.start()
+	heart_animation.speed_scale = heart_animation_rate
 	
 
 func update_vignette():
