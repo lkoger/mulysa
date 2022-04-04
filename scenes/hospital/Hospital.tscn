@@ -1452,12 +1452,10 @@ points = PoolVector2Array( 0, 13.5529, 15.5877, 13.5529, 15.5877, 32, 0, 32 )
 layer = 2
 
 [node name="Control" type="Control" parent="CanvasLayer"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color( 0.247059, 0.254902, 0.286275, 1 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
@@ -1490,7 +1488,7 @@ tile_data = PoolIntArray( -852018, 2, 0, -852017, 6, 0, -852016, 6, 0, -852015, 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 5 )]
-position = Vector2( -475, 468 )
+position = Vector2( -32, 2 )
 
 [node name="Death" parent="." instance=ExtResource( 1 )]
 position = Vector2( -64, -512 )
@@ -1884,9 +1882,6 @@ position = Vector2( 0, 1 )
 position = Vector2( 26, -501 )
 texture = ExtResource( 34 )
 
-[node name="Interactable2" parent="furniture/Sprite42" instance=ExtResource( 42 )]
-position = Vector2( 481, 72 )
-
 [node name="Sprite17" type="Sprite" parent="furniture"]
 position = Vector2( -531, -338 )
 texture = ExtResource( 34 )
@@ -2277,7 +2272,6 @@ position = Vector2( 98, -488 )
 position = Vector2( 98, -475 )
 
 [node name="lights" type="Node2D" parent="."]
-visible = false
 
 [node name="Light2D" parent="lights" instance=ExtResource( 43 )]
 position = Vector2( -65, 1.90735e-06 )
