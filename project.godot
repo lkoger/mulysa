@@ -34,6 +34,7 @@ config/icon="res://assets/Death.png"
 [autoload]
 
 Globals="*res://Globals.tscn"
+Utils="*res://Utils.tscn"
 
 [display]
 

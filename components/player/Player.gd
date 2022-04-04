@@ -9,10 +9,13 @@ var flipped = false
 
 onready var camera : Camera2D = get_node("Camera2D")
 
+var death = null
+
 # Items
 var has_adrenaline = false
 var adrenaline_timer: int = 600
 onready var adrenaline_progress: AnimatedSprite = get_node("UI/UIArea/AdrenalineAnimatedSprite")
+
 var has_psychedelics = false
 var psychedelics_timer: int = 1200
 onready var psychedelics_progress: AnimatedSprite = get_node("UI/UIArea/PillAnimatedSprite")
@@ -79,7 +82,22 @@ func _physics_process(_delta):
 	update_adrenaline_progress()
 	update_psychedelics_progress()
 	update_camera()
+	update_vignette()
 	velocity = move_and_slide(velocity)
+
+func update_vignette():
+	var vignette_scale = 0
+	if not death:
+		var deaths = get_tree().get_nodes_in_group("death")
+		if len(deaths) > 0:
+			death = deaths[0]
+	
+	if death:
+		var distance_to_death = global_position.distance_to(death.global_position)
+		distance_to_death = min(300, distance_to_death)
+		vignette_scale = 1.0 - (distance_to_death / 300.0)
+	
+	$UI.update_vignette(vignette_scale)
 
 func update_camera():
 	var current_zoom = camera.zoom
@@ -125,7 +143,6 @@ func handle_adrenaline(item):
 	has_adrenaline = true
 	emit_signal("take_adrenaline")
 
-
 func die():
 	collision_layer = 0
 	collision_mask = 0
@@ -135,10 +152,7 @@ func die():
 	Globals._stop_single_play('wheelchair')
 	emit_signal("died")
 	_change_state('dead')
-	
 
 func print_info():
 	print(adrenaline_timer)
 	print(psychedelics_timer)
-
-
