@@ -8,9 +8,11 @@ var player = null
 var active = true
 
 export (NodePath) var nav_tree_path = null
-onready var nav_node : Navigation2D = get_node(nav_tree_path)
+var nav_node = null
 
 func _ready():
+	if nav_node == null:
+		nav_node = get_node(nav_tree_path)
 	player = get_tree().get_nodes_in_group("player")[0]
 	Globals._play_death_sound()
 	modulate = Color(1,1,1,0)
