@@ -95,6 +95,7 @@ func connect_with_death():
 		death = deaths[0]
 		connect("take_psychedelic", death, "_on_Player_take_psychedelic")
 		connect("psychadelic_wears_off", death, "_on_Player_psychadelic_wears_off")
+		connect("died", death, "_on_Player_died")
 
 func play_and_schedule_heartbeat():
 	if dead:
